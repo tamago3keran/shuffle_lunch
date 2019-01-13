@@ -2,6 +2,7 @@ class User
   include Mongoid::Document
   include Mongoid::Timestamps
 
+  has_one :matching_score_set
   has_many :matching_scores, inverse_of: :owner
 
   field :first_name, type: String

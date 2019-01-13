@@ -4,6 +4,7 @@ class MatchingScore
 
   belongs_to :owner, class_name: "User"
   belongs_to :partner, class_name: "User"
+  belongs_to :matching_score_set
 
   field :score, type: Float, default: 0.0
 
