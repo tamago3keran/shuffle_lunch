@@ -4,10 +4,13 @@ describe Group do
   let(:user) { User.create(first_name: "test", last_name: "test") }
   let(:partner1) { User.create(first_name: "partner1", last_name: "partner1") }
   let(:partner2) { User.create(first_name: "partner2", last_name: "partner2") }
+  let!(:user_matching_score_set) { MatchingScoreSet.create(owner: user) }
+  let!(:partner1_matching_score_set) { MatchingScoreSet.create(owner: partner1) }
+  let!(:partner2_matching_score_set) { MatchingScoreSet.create(owner: partner2) }
 
   before do
-    [user, partner1, partner2].repeated_combination(2).to_a.each do |combination|
-      MatchingScore.create(owner: combination[0], partner: combination[1], score: 1.0)
+    User.all.to_a.repeated_combination(2).to_a.each do |combination|
+      MatchingScore.create(owner: combination[0], partner: combination[1], matching_score_set: combination[0].matching_score_set, score: 1.0)
     end
   end
 
