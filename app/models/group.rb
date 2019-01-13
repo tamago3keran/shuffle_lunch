@@ -2,6 +2,8 @@ class Group
   include Mongoid::Document
   include Mongoid::Timestamps
 
+  belongs_to :group_set
+
   field :member_ids, type: Array, default: []
 
   def matching_score

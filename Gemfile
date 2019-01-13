@@ -16,6 +16,7 @@ group :development, :test do
   gem "listen"
   gem "rspec-rails", "~> 3.8"
   gem "mongoid-rspec", "~> 4.0"
+  gem "database_cleaner"
 end
 
 group :development do
