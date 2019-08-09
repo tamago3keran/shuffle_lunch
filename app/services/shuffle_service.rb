@@ -1,5 +1,5 @@
 class ShuffleService < BaseService
-  TRIAL_NUM = 1
+  TRIAL_NUM = 100
 
   def initialize(users, group_num)
     @users = users
@@ -28,11 +28,21 @@ class ShuffleService < BaseService
       users.count.times.each do |i|
         group = group_(group_index(i))
         if group.member_ids.empty?
-          group.member_ids << users[i].id
+          group.member_ids << users.pop.id
         else
-          group.member_ids << group.best_partner(users.drop(i)).id
+          best_partner = group.best_partner(users)
+          group.member_ids << best_partner.id
+          users.delete(best_partner)
         end
       end
+      #users.count.times.each do |i|
+      #  group = group_(group_index(i))
+      #  if group.member_ids.empty?
+      #    group.member_ids << users[i].id
+      #  else
+      #    group.member_ids << group.best_partner(users.drop(i)).id
+      #  end
+      #end
     end
 
     def group_(num)

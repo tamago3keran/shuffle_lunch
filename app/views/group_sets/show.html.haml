@@ -1,0 +1,8 @@
+%h1 チーム分け
+- @groups.each_with_index do |group, i|
+  %h2 Group#{i+1}
+  - group.members.each do |member|
+    = "#{member.full_name}"
+    %br
+%br
+= link_to "一覧に戻る", group_sets_path
