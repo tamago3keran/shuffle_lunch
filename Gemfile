@@ -21,7 +21,7 @@ group :development, :test do
 end
 
 group :development do
-  gem "rubocop", require: false
+  gem "rubocop", ">= 0.75", require: false
   gem "web-console", ">= 4.0.0"
   gem "spring"
 end
