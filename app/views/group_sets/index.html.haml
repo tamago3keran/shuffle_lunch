@@ -1,12 +1,15 @@
 %h1 チーム分け一覧
-- @group_sets.order_by(created_at: :desc).each do |group_set|
-  = link_to group_set.created_at, group_set_path(group_set)
-  - if group_set.applied?
-    = "適用済み"
-    = link_to("適用を取り消す", group_set_applied_status_path(group_set, params: { cancel_update: true }), method: :patch)
-  - else
-    = "未適用"
-    = link_to("適用する", group_set_applied_status_path(group_set), method: :patch)
+- if @group_sets.present?
+  = paginate(@group_sets)
   %br
+  - @group_sets.each do |group_set|
+    = link_to group_set.created_at, group_set_path(group_set)
+    - if group_set.applied?
+      = "適用済み"
+      = link_to("適用を取り消す", group_set_applied_status_path(group_set, params: { cancel_update: true }), method: :patch)
+    - else
+      = "未適用"
+      = link_to("適用する", group_set_applied_status_path(group_set), method: :patch)
+    %br
 %br
 = link_to "チームを作成する", new_group_set_path

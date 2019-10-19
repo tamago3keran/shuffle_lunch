@@ -1,6 +1,6 @@
 class GroupSetsController < ApplicationController
   def index
-    @group_sets = GroupSet.all
+    @group_sets = GroupSet.all.desc(:created_at).page(params[:page]).per(10)
   end
 
   def show

@@ -11,6 +11,8 @@ gem "jbuilder", "~> 2.5"
 gem "bcrypt", "~> 3.1.7"
 gem "bootsnap", ">= 1.1.0", require: false
 gem "haml-rails", "~> 2.0"
+gem "kaminari", "~> 1.1"
+gem "kaminari-mongoid", "~> 1.0"
 
 group :development, :test do
   gem "byebug", platforms: [:mri, :mingw, :x64_mingw]
