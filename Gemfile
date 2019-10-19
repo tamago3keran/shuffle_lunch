@@ -1,11 +1,11 @@
 source "https://rubygems.org"
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby "2.4.4"
+ruby "2.6.5"
 gem "rails", "5.2.1"
 gem "mongoid", "~> 7.0"
 
-gem "sass-rails", "~> 5.0"
+gem "sassc", "~> 2.2"
 gem "uglifier", ">= 1.3.0"
 gem "jbuilder", "~> 2.5"
 gem "bcrypt", "~> 3.1.7"

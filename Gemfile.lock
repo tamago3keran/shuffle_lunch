@@ -196,17 +196,8 @@ GEM
     ruby_dep (1.5.0)
     ruby_parser (3.12.0)
       sexp_processor (~> 4.9)
-    sass (3.7.2)
-      sass-listen (~> 4.0.0)
-    sass-listen (4.0.0)
-      rb-fsevent (~> 0.9, >= 0.9.4)
-      rb-inotify (~> 0.9, >= 0.9.7)
-    sass-rails (5.0.7)
-      railties (>= 4.0.0, < 6)
-      sass (~> 3.1)
-      sprockets (>= 2.8, < 4.0)
-      sprockets-rails (>= 2.0, < 4.0)
-      tilt (>= 1.1, < 3)
+    sassc (2.2.1)
+      ffi (~> 1.9)
     sexp_processor (4.11.0)
     spring (2.0.2)
       activesupport (>= 4.2)
@@ -254,13 +245,13 @@ DEPENDENCIES
   rails (= 5.2.1)
   rspec-rails (~> 3.8)
   rubocop
-  sass-rails (~> 5.0)
+  sassc (~> 2.2)
   spring
   uglifier (>= 1.3.0)
   web-console (>= 3.3.0)
 
 RUBY VERSION
-   ruby 2.4.4p296
+   ruby 2.6.5p114
 
 BUNDLED WITH
-   1.16.1
+   1.17.2
