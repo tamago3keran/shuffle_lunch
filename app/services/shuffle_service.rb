@@ -28,10 +28,10 @@ class ShuffleService < BaseService
       users.count.times.each do |i|
         group = group_(group_index(i))
         if group.member_ids.empty?
-          group.member_ids << users.pop.id
+          group.member_ids << users.pop.id.to_s
         else
           best_partner = group.best_partner(users)
-          group.member_ids << best_partner.id
+          group.member_ids << best_partner.id.to_s
           users.delete(best_partner)
         end
       end

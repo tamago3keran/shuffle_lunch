@@ -30,7 +30,7 @@ class GroupSetsController < ApplicationController
         @group_set = GroupSet.find(params[:id])
         @groups = @group_set.groups
       when :new
-        @users = User.all
+        @users = User.active
       when :create
         @users = User.where(:id.in => params[:user_ids])
       when :destroy

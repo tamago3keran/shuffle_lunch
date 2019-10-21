@@ -39,10 +39,10 @@ class Group
 
   private
     def partner_ids(user)
-      self.member_ids.reject { |member_id| member_id == user.id }
+      self.member_ids.reject { |member_id| member_id == user.id.to_s }
     end
 
     def other_groups_user_ids
-      User.all.pluck(:id) - self.member_ids
+      User.all.pluck(:id).map(&:to_s) - self.member_ids
     end
 end
