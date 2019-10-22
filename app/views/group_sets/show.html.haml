@@ -1,6 +1,7 @@
 %h1 チーム分け
 - @groups.each_with_index do |group, i|
   %h2 Group#{i+1}
+  = link_to "編集する", edit_group_set_group_path(@group_set, group)
   = link_to "削除する", group_set_group_path(@group_set, group), method: :delete
   %br
   - group.members.each do |member|

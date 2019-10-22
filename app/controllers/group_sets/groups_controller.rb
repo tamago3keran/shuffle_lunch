@@ -12,6 +12,17 @@ class GroupSets::GroupsController < ApplicationController
     end
   end
 
+  def edit; end
+
+  def update
+    @group.member_ids.concat(params[:user_ids])
+    if @group.save
+      redirect_to group_set_path(@group_set), flash: { notice: "チーム更新に成功しました!" }
+    else
+      redirect_to group_set_path(@group_set), flash: { error: "チーム更新に失敗しました!" }
+    end
+  end
+
   def destroy
     return redirect_to group_set_path(@group_set), flash: { error: "チーム削除に失敗しました!" } if @group.blank?
     if @group.delete
@@ -30,6 +41,13 @@ class GroupSets::GroupsController < ApplicationController
         @users = User.active
       when :create
         @group_set = GroupSet.find(params[:group_set_id])
+      when :edit
+        @group = Group.find(params[:id])
+        @group_set = @group.group_set
+        @users = User.active
+      when :update
+        @group_set = GroupSet.find(params[:group_set_id])
+        @group = @group_set.groups.find(params[:id])
       when :destroy
         @group_set = GroupSet.find(params[:group_set_id])
         @group = @group_set.groups.find(params[:id])

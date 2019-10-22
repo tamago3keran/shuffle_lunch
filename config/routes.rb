@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   end
   resources :group_sets, only: [:index, :show, :new, :create, :destroy] do
     scope module: :group_sets do
-      resources :groups, only: [:new, :create, :destroy]
+      resources :groups, only: [:new, :create, :edit, :update, :destroy]
       resource :applied_status, only: [:update]
     end
   end
