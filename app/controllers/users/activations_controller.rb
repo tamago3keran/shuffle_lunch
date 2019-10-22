@@ -3,17 +3,17 @@ class Users::ActivationsController < ApplicationController
 
   def update
     if @user.update_attributes(active: true)
-      redirect_to root_path, flash: { notice: "ユーザの有効化に成功しました!" }
+      redirect_to users_path, flash: { notice: "ユーザの有効化に成功しました!" }
     else
-      redirect_to root_path, flash: { notice: "ユーザの有効化に失敗しました!" }
+      redirect_to users_path, flash: { notice: "ユーザの有効化に失敗しました!" }
     end
   end
 
   def destroy
     if @user.update_attributes(active: false)
-      redirect_to root_path, flash: { notice: "ユーザの無効化に成功しました!" }
+      redirect_to users_path, flash: { notice: "ユーザの無効化に成功しました!" }
     else
-      redirect_to root_path, flash: { notice: "ユーザの無効化に失敗しました!" }
+      redirect_to users_path, flash: { notice: "ユーザの無効化に失敗しました!" }
     end
   end
 
