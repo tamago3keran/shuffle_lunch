@@ -1,3 +1,4 @@
+#root
 %h1 チーム分け一覧
 - if @group_sets.present?
   = paginate(@group_sets)
@@ -15,3 +16,5 @@
 %br
 = link_to "チームを作成する", new_group_set_path
 = link_to "ユーザ一覧を見る", users_path
+
+= javascript_include_tag "packs/hello.bundle"

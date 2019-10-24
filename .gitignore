@@ -9,3 +9,6 @@
 /public/assets
 .byebug_history
 /vendor/bundle
+
+/frontend/node_modules
+/app/assets/javascripts/packs
