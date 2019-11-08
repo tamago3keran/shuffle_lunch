@@ -15,8 +15,7 @@ class GroupSets::GroupsController < ApplicationController
   def edit; end
 
   def update
-    @group.member_ids.concat(params[:user_ids])
-    if @group.save
+    if @group.update_attributes(member_ids: params[:user_ids])
       redirect_to group_set_path(@group_set), flash: { notice: "チーム更新に成功しました!" }
     else
       redirect_to group_set_path(@group_set), flash: { error: "チーム更新に失敗しました!" }
