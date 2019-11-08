@@ -1,7 +1,10 @@
-%h1 ユーザ作成
-= form_for @user, url: users_path do |f|
-  = f.text_field :first_name, placeholder: 'First Name', value: nil, required: true
-  = f.text_field :last_name, placeholder: 'Last Name', value: nil, required: true
-  = submit_tag "送信"
-%br
-= link_to "戻る", users_path
+#js-user_new
+.main
+  %h1 ユーザ作成
+  = form_for @user, url: users_path do |f|
+    = f.text_field :first_name, placeholder: 'First Name', value: nil, required: true
+    = f.text_field :last_name, placeholder: 'Last Name', value: nil, required: true
+    = submit_tag "送信"
+  %br
+  = link_to "戻る", users_path
+  = javascript_include_tag 'packs/user_new.bundle'

@@ -1,10 +1,13 @@
-%h1 チーム作成
-= form_tag group_set_groups_path, method: :post do
-  %h2 ユーザ
-  - @users.each do |user|
-    = check_box_tag "user_ids[]", user.id, false
-    = user.full_name
-    %br
-  = submit_tag "送信"
-%br
-= link_to "戻る", group_set_path(@group_set)
+#js-group_new
+.main
+  %h1 チーム作成
+  = form_tag group_set_groups_path, method: :post do
+    %h2 ユーザ
+    - @users.each do |user|
+      = check_box_tag "user_ids[]", user.id, false
+      = user.full_name
+      %br
+    = submit_tag "送信"
+  %br
+  = link_to "戻る", group_set_path(@group_set)
+  = javascript_include_tag 'packs/group_new.bundle'

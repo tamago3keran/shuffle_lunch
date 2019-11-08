@@ -1,11 +1,13 @@
-%h1 ユーザ一覧
-- @users.each do |user|
-  = user.full_name
-  - if user.active?
-    = link_to("無効化する", user_activation_path(user), method: :delete)
-  - else
-    = link_to("有効化する", user_activation_path(user), method: :patch)
+#js-user_index
+.main
+  %h1 ユーザ一覧
+  - @users.each do |user|
+    = user.full_name
+    - if user.active?
+      = link_to("無効化する", user_activation_path(user), method: :delete)
+    - else
+      = link_to("有効化する", user_activation_path(user), method: :patch)
+    %br
   %br
-%br
-= link_to "ユーザを作成する", new_user_path
-= link_to "チーム分け一覧を見る", group_sets_path
+  = link_to "ユーザを作成する", new_user_path
+  = javascript_include_tag 'packs/user_index.bundle'

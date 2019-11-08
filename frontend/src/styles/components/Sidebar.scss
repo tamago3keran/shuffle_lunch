@@ -1,0 +1,13 @@
+$mdc-theme-primary: #1EC38B;
+$mdc-theme-surface: #2E3235;
+$mdc-theme-on-surface: #FFFFFF;
+
+@import '@material/react-drawer/index.scss';
+@import '@material/react-list/index.scss';
+
+.sidebar-container {
+  position: sticky;
+  top: 0px;
+  height: 100vh;
+  margin-right: 16px;
+}
