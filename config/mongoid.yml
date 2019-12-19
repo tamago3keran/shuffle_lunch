@@ -167,3 +167,5 @@ production:
   clients:
     default:
       uri: <%= ENV["MONGODB_URI"] %>
+      options:
+        connect_timeout: 15
