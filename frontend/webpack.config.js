@@ -1,9 +1,6 @@
 const path = require('path');
 
 module.exports = {
-  watch: true,
-  mode: 'development',
-
   entry: {
     group_new: './src/javascripts/pages/groups/group_new.js',
     group_edit: './src/javascripts/pages/groups/group_edit.js',
