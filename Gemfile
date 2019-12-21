@@ -4,6 +4,8 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby "2.6.5"
 gem "rails", "6.0.0"
 gem "mongoid", ">= 7.0.5"
+gem "mongo"
+gem "bson_ext"
 
 gem "sassc", "~> 2.2"
 gem "uglifier", ">= 1.3.0"
