@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :restaurants
+  
   root to: "group_sets#index"
   resources :users, only: [:index, :new, :create] do
     scope module: :users do

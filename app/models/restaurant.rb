@@ -9,5 +9,5 @@ class Restaurant
   field :description, type: String
 
   validates :name, presence: true
-  validates :url, persence: true
+  validates :url, presence: true
 end
