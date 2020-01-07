@@ -1,4 +1,4 @@
-class GroupSets::GroupsController < ApplicationController
+class Admin::GroupSets::GroupsController < ApplicationController
   before_action :load_resource
 
   def new; end
@@ -6,9 +6,9 @@ class GroupSets::GroupsController < ApplicationController
   def create
     @group = Group.new(group_set: @group_set, member_ids: params[:user_ids])
     if @group.save
-      redirect_to group_set_path(@group_set), flash: { notice: "チーム作成に成功しました!" }
+      redirect_to admin_group_set_path(@group_set), flash: { notice: "チーム作成に成功しました!" }
     else
-      redirect_to group_set_path(@group_set), flash: { error: "チーム作成に失敗しました!" }
+      redirect_to admin_group_set_path(@group_set), flash: { error: "チーム作成に失敗しました!" }
     end
   end
 
@@ -16,18 +16,18 @@ class GroupSets::GroupsController < ApplicationController
 
   def update
     if @group.update_attributes(member_ids: params[:user_ids])
-      redirect_to group_set_path(@group_set), flash: { notice: "チーム更新に成功しました!" }
+      redirect_to admin_group_set_path(@group_set), flash: { notice: "チーム更新に成功しました!" }
     else
-      redirect_to group_set_path(@group_set), flash: { error: "チーム更新に失敗しました!" }
+      redirect_to admin_group_set_path(@group_set), flash: { error: "チーム更新に失敗しました!" }
     end
   end
 
   def destroy
-    return redirect_to group_set_path(@group_set), flash: { error: "チーム削除に失敗しました!" } if @group.blank?
+    return redirect_to admin_group_set_path(@group_set), flash: { error: "チーム削除に失敗しました!" } if @group.blank?
     if @group.delete
-      redirect_to group_set_path(@group_set), flash: { notice: "チーム削除に成功しました!" }
+      redirect_to admin_group_set_path(@group_set), flash: { notice: "チーム削除に成功しました!" }
     else
-      redirect_to group_set_path(@group_set), flash: { error: "チーム削除に失敗しました!" }
+      redirect_to admin_group_set_path(@group_set), flash: { error: "チーム削除に失敗しました!" }
     end
   end
 
