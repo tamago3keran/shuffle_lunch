@@ -7,14 +7,13 @@ Rails.application.routes.draw do
       end
     end
   end
-  resources :group_sets, only: [:index, :show] do
-    namespace :admin do
-      resources :group_sets, only: [:index, :show, :new, :create, :destroy] do
-        scope module: :group_sets do
-          resources :groups, only: [:new, :create, :edit, :update, :destroy]
-          resource :applied_status, only: [:update]
-        end
+  namespace :admin do
+    resources :group_sets, only: [:index, :show, :new, :create, :destroy] do
+      scope module: :group_sets do
+        resources :groups, only: [:new, :create, :edit, :update, :destroy]
+        resource :applied_status, only: [:update]
       end
     end
   end
+  resources :group_sets, only: [:index, :show]
 end
