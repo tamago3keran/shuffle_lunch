@@ -8,5 +8,5 @@
     = f.text_area :description, placeholder: 'お店詳細', value: nil, class: "description_of_restaurant"
     =submit_tag "追加する", class: "btn_to_add_restaurant"
   %br
-=link_to "一覧に戻る", restaurants_path, class: "btn"
+  =link_to "一覧に戻る", restaurants_path, class: "btn_back_to_index_page"
 = javascript_include_tag 'packs/user_index.bundle'

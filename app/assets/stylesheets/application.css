@@ -95,6 +95,24 @@ h1 {
 .btn_to_add_restaurant {
   width: 100px;
   height: 30px;
+  position: absolute;
+  left: 70%;
+}
+
+.btn_back_to_index_page {
+  height: 20px;
+  text-decoration: none;
+  border-radius: 4px;
+  border: 1px solid #111;
+  background-color: #dddada;
   display: inline-block;
-  
+  margin-top: 40px;
+}
+
+.btn_back_to_index_page:hover {
+  background-color: #f3f3f3;
+}
+
+.new_restaurant {
+  position: relative;
 }
