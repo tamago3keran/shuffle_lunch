@@ -1,0 +1,12 @@
+#js-user_index
+.main
+  %h1  お店を追加する
+  .add_restaurant_form
+  = form_for @restaurant, url: restaurants_path do |f|
+    = f.text_field :name, placeholder: 'お店の名前', value: nil, required: true, class: "name_of_restaurant"
+    = f.text_field :url, placeholder: 'お店のurl', value: nil, required: true, class: "url_of_restaurant"
+    = f.text_area :description, placeholder: 'お店詳細', value: nil, class: "description_of_restaurant"
+    =submit_tag "追加する", class: "btn_to_add_restaurant"
+  %br
+=link_to "一覧に戻る", restaurants_path, class: "btn"
+= javascript_include_tag 'packs/user_index.bundle'
