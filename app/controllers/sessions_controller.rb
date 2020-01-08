@@ -1,4 +1,5 @@
 class SessionsController < ApplicationController
+
   def new
   end
 
@@ -8,7 +9,6 @@ class SessionsController < ApplicationController
       log_in adminuser
       redirect_back(fallback_location: group_sets_path)
     else
-      flash.now[:danger] = "invalid email/password combination"
       render "new"
     end
   end
