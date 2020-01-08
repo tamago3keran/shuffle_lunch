@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
   root to: "group_sets#index"
+  get "/login", to: "sessions#new"
+  get "/login", to: "sessions#create"
+  delete "/logout", to: "sessions#destroy"
   resources :users, only: [:index, :new, :create] do
     scope module: :users do
       resource :activation, only: [:update, :destroy]
