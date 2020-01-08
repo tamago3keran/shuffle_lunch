@@ -1,0 +1,33 @@
+/*レストラン関連のスタイリング*/
+.add_restaurant_button {
+  height: 30px;
+  display: inline-flex;
+  text-align: center;
+  text-decoration: none; 
+  border-radius: 5px;
+  border: 1px solid #111;
+  margin:30px auto 20px;
+  background-color: #dddada;
+}
+
+.add_restaurant_button:hover {
+  background-color: #f3f3f3;
+}
+
+
+.restaurant_index {
+  width: 100%;
+  padding: 5px 30px;
+  border: 1px solid #c0bdbd;
+}
+
+.restaurant_index > a {
+  display: flex;
+  margin-left: 70%;
+}
+
+.pagination {
+  margin-top: 20px;
+  text-align: right;
+}
+

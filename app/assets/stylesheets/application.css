@@ -33,6 +33,7 @@ h1 {
 
 .main {
   display: block;
+<<<<<<< HEAD
 }
 
 /*お店一覧ページのスタイリング*/
@@ -115,4 +116,6 @@ h1 {
 
 .new_restaurant {
   position: relative;
+=======
+>>>>>>> slsup/making_index_page
 }
