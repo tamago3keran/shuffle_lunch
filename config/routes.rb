@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   
   root to: "group_sets#index"
   resources :restaurants
-  # resources :restaurant_notes, only: [:create]
+
   resources :users, only: [:index, :new, :create] do
     scope module: :users do
       resource :activation, only: [:update, :destroy]
