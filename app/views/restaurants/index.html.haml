@@ -6,7 +6,7 @@
   - @restaurants.each do |restaurant| 
     .restaurant_index
       = restaurant.name 
-      = link_to "お店の詳細"
+      = link_to "お店の詳細", restaurant_path(restaurant)
   = paginate(@restaurants)
   = javascript_include_tag 'packs/user_index.bundle'
   
