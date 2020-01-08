@@ -3,15 +3,18 @@ Rails.application.routes.draw do
   get "/login", to: "sessions#new"
   post "/login", to: "sessions#create"
   delete "/logout", to: "sessions#destroy"
-  resources :users, only: [:index, :new, :create] do
-    scope module: :users do
-      resource :activation, only: [:update, :destroy]
+  namespace :admin do
+    resources :users, only: [:index, :new, :create] do
+      scope module: :users do
+        resource :activation, only: [:update, :destroy]
+      end
+    end
+    resources :group_sets, only: [:index, :show, :new, :create, :destroy] do
+      scope module: :group_sets do
+        resources :groups, only: [:new, :create, :edit, :update, :destroy]
+        resource :applied_status, only: [:update]
+      end
     end
   end
-  resources :group_sets, only: [:index, :show, :new, :create, :destroy] do
-    scope module: :group_sets do
-      resources :groups, only: [:new, :create, :edit, :update, :destroy]
-      resource :applied_status, only: [:update]
-    end
-  end
+  resources :group_sets, only: [:index, :show]
 end
