@@ -3,7 +3,7 @@
   height: 30px;
   display: inline-flex;
   text-align: center;
-  text-decoration: none; 
+  text-decoration: none;
   border-radius: 5px;
   border: 1px solid #111;
   margin:30px auto 20px;
@@ -30,4 +30,3 @@
   margin-top: 20px;
   text-align: right;
 }
-
