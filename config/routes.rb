@@ -8,6 +8,7 @@ Rails.application.routes.draw do
       scope module: :users do
         resource :activation, only: [:update, :destroy]
       end
+
     end
     resources :group_sets, only: [:index, :show, :new, :create, :destroy] do
       scope module: :group_sets do
@@ -17,4 +18,5 @@ Rails.application.routes.draw do
     end
   end
   resources :group_sets, only: [:index, :show]
+  resources :restaurants
 end
