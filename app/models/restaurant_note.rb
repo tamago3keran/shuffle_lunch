@@ -2,7 +2,6 @@ class RestaurantNote
   include Mongoid::Document
   include Mongoid::Timestamps 
 
-
   embedded_in :restaurant
 
   field :group_id, type: String
