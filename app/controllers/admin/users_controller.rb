@@ -1,5 +1,6 @@
 class Admin::UsersController < ApplicationController
   before_action :load_resource, only: [:index, :new]
+  before_action :logged_in_admin_user
 
   def index; end
 

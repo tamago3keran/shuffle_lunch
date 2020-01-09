@@ -1,5 +1,6 @@
 class Admin::Users::ActivationsController < ApplicationController
   before_action :load_resource
+  before_action :logged_in_admin_user
 
   def update
     if @user.update_attributes(active: true)

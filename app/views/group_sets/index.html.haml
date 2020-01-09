@@ -1,4 +1,16 @@
 #js-group_set_index
 .main
-  %h1 groups#index
+  %h1 チーム分け一覧
+  - if @group_sets.present?
+    = paginate(@group_sets)
+    %br
+    - @group_sets.each do |group_set|
+      = link_to group_set.created_at, group_set_path(group_set)
+      - if group_set.applied?
+        適用済み
+      - else
+        未適用
+      %br
+  %br
+  = link_to "管理者ログイン", login_path
   = javascript_include_tag 'packs/group_set_index.bundle'
