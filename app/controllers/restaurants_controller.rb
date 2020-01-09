@@ -29,12 +29,11 @@ class RestaurantsController < ApplicationController
 
   def destroy
     restaurant = Restaurant.find(params[:id])
-    if restaurant
-      restaurant.destroy
+    if restaurant.destroy
       flash[:notice] = "お店を削除しました"
       redirect_to restaurants_path
     else
-      flash[:error] = "お店が見つかりません"
+      flash[:error] = "お店の削除に失敗しました"
       redirect_to request.referrer||root_url
     end
   end
