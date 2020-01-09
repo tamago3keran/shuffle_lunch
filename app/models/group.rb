@@ -3,6 +3,7 @@ class Group
   include Mongoid::Timestamps
 
   belongs_to :group_set
+  belongs_to :restaurant
 
   field :member_ids, type: Array, default: []
 

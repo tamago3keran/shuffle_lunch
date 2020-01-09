@@ -1,0 +1,13 @@
+#js-user_index
+.main
+  %h1 みんなが行ったお店一覧
+  .add_restaurant_button
+    = link_to "お店を追加する", new_restaurant_path
+  - @restaurants.each do |restaurant| 
+    .restaurant_index
+      = restaurant.name 
+      = link_to "お店の詳細"
+  = paginate(@restaurants)
+  = javascript_include_tag 'packs/user_index.bundle'
+  
+    
