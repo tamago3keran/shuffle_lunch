@@ -1,7 +1,7 @@
 #js-user_index
 .main
   %h1 みんなが行ったお店一覧
-  .add_restaurant_button
+  .btn
     = link_to "お店を追加する", new_restaurant_path
   - @restaurants.each do |restaurant| 
     .restaurant_index
