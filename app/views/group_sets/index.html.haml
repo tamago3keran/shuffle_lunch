@@ -1,16 +1,20 @@
 #js-group_set_index
-.main
-  %h1 チーム分け一覧
-  - if @group_sets.present?
-    = paginate(@group_sets)
-    %br
-    - @group_sets.each do |group_set|
-      = link_to group_set.created_at, group_set_path(group_set)
-      - if group_set.applied?
-        適用済み
-      - else
-        未適用
+.groupset_main
+  .item
+    %h1 過去のランチ
+  .item
+    - if @group_sets.present?
+      = paginate(@group_sets)
       %br
+  .index_item
+    - @group_sets.each do |group_set|
+      = link_to group_set_path(group_set), class: "group_sets" do
+        .groupset_item
+          = group_set.created_at
+        .groupset_item
+          グループ数: #{group_set.groups.count}
+      -# %br
   %br
-  = link_to "管理者ログイン", login_path
+  .item
+    = link_to "管理者ログイン", login_path
   = javascript_include_tag 'packs/group_set_index.bundle'
