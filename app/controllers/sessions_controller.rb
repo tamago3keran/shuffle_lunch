@@ -6,7 +6,7 @@ class SessionsController < ApplicationController
   def create
     admin_user = AdminUser.find_by(email: params[:session][:email].downcase)
     if admin_user && admin_user.authenticate(params[:session][:password])
-      log_in admin_user
+      login(admin_user)
       redirect_back(fallback_location: group_sets_path)
     else
       render "new"
@@ -14,7 +14,7 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-    log_out
+    logout
     redirect_to root_url
   end
 end
