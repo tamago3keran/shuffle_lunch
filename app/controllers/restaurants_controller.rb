@@ -47,7 +47,7 @@ class RestaurantsController < ApplicationController
       render 'edit'
     end
   end
-
+  
   private
     def restaurant_params
       params.require(:restaurant).permit(:name, :url, :description)
