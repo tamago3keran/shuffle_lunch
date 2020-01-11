@@ -9,6 +9,17 @@ class RestaurantsController < ApplicationController
   def new
     @restaurant = Restaurant.new
   end
+
+  def destroy
+    restaurant = Restaurant.find(params[:id])
+    if restaurant.destroy
+      flash[:notice] = "お店を削除しました"
+      redirect_to restaurants_path
+    else
+      flash[:error] = "お店の削除に失敗しました"
+      redirect_to request.referrer||root_url
+    end
+  end
   
   def create
     @restaurant = Restaurant.new(restaurant_params)
