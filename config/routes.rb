@@ -16,6 +16,10 @@ Rails.application.routes.draw do
       end
     end
   end
-  resources :group_sets, only: [:index, :show]
+  resources :group_sets, only: [:index, :show] do
+    scope module: :group_sets do
+      resources :groups, only: [:show, :edit, :update]
+    end
+  end
   resources :restaurants
 end

@@ -1,6 +1,6 @@
 class Restaurant
   include Mongoid::Document
-  include Mongoid::Timestamps 
+  include Mongoid::Timestamps
 
   has_many :groups
   embeds_many :restaurant_notes

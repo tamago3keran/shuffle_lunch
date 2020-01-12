@@ -9,7 +9,7 @@ class RestaurantsController < ApplicationController
   def new
     @restaurant = Restaurant.new
   end
-  
+
   def create
     @restaurant = Restaurant.new(restaurant_params)
     if @restaurant.save

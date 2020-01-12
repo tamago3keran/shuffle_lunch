@@ -1,11 +1,26 @@
 #js-group_set_show
-.main
-  %h1 チーム分け
-  - @groups.each_with_index do |group, i|
-    %h2 Group#{i+1}
-    - group.members.each do |member|
-      = "#{member.full_name}"
-      %br
-  %br
-  = link_to "一覧に戻る", group_sets_path
+.groupset_main
+  .item
+    %h1 #{@group_set.created_at.strftime('%Y/%m/%d')}のグループ
+  .index_item
+    - @groups.each_with_index do |group, i|
+      = link_to group_set_group_path(@group_set, group), class: "groups" do
+        .group_item
+          .group_name
+            %h2 Group#{i+1}
+          .member_item
+            - group.members.each do |member|
+              %p= "#{member.full_name}"
+        - if group.restaurant.present?
+          .grouprestaurant
+            .grouprestaurant_name
+              = group.restaurant.name.truncate(17)
+            .grouprestaurant_des
+              = group.restaurant.description.truncate(60)
+        - else
+          .grouprestaurant_blank
+            行ったお店を登録しよう！
+    %br
+    .left-item
+      = link_to "一覧に戻る", group_sets_path
   = javascript_include_tag 'packs/group_set_show.bundle'

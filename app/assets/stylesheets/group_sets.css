@@ -13,6 +13,10 @@
   margin: 0 auto;
 }
 
+.left-item {
+  text-align: left;
+}
+
 .group_sets {
   border-radius: 3px;
   border: 1px solid black;
@@ -24,4 +28,53 @@
 
 a.group_sets {
   color: black;
+}
+
+.groups {
+  border-radius: 3px;
+  border: 1px solid black;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  text-decoration: none;
+}
+
+a.groups {
+  color: black;
+}
+
+.member_item {
+  display: flex;
+}
+
+.member_item > p {
+  padding: 0 5px;
+  margin: 0 5px;
+  border-bottom: 2px solid black;
+}
+
+.grouprestaurant {
+  width: 30%;
+  border-radius: 3px;
+  border: 1px solid black;
+  padding: 5px;
+  margin-right: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.grouprestaurant_blank {
+  width: 30%;
+  border-radius: 3px;
+  border: 1px solid black;
+  padding: 5px;
+  margin-right: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.grouprestaurant_des {
+  font-size: 13px;
 }
