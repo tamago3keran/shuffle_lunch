@@ -129,17 +129,17 @@
 /*お店口コミスタイリング*/
 .restaurant_notes {
   display: flex;
-}
-
-.restaurant_notes > p {
+  flex-wrap: wrap;
   font-weight: normal;
 }
 
 .restaurant_note {
-  height: 200px;;
+  height: 100px;;
   width: 25%;
   border: 1px solid #808080;
   position: relative;
+  margin-right: 10px;
+  margin-bottom: 20px;
 }
 
 .class_writer_name {

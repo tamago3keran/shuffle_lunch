@@ -10,15 +10,19 @@
       =@restaurant.description
     
     お店の口コミ
-  .restaurant_notes
-    .restaurant_note
-      %p.class_writer_name 口コミ者名前
-      %p.class_comment 口コミ内容
-      %p.class_time_to_be_submitted 投稿時間
-    
+    .restaurant_notes
+      -@restaurant_notes.each do |restaurant_note| 
+        .restaurant_note
+          %p.class_writer_name
+            投稿者：  
+            = restaurant_note.writer_name
+          %p.class_comment 
+            = restaurant_note.comment
+          %p.class_time_to_be_submitted 
+            = restaurant_note.created_at
+      
   %p
     ▼口コミを投稿する
-    = @restaurant_notes
 
     = form_for @restaurant_note, url: restaurant_restaurant_notes_path(params[:id]) do |f|
       = f.text_field :writer_name, placeholder: '名前', value: nil, required: true, class: "name_of_restaurant"
