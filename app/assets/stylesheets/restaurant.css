@@ -156,3 +156,28 @@
   bottom: 0;
   right: 0;
 }
+
+.new_restaurant_note {
+  position: relative;
+}
+
+.form_of_writer_name {
+  width: 30%;
+  height: 20px;
+  margin:20px auto 20px;
+}
+
+.form_of_comment {
+  width: 80%;
+  height: 60px;
+  margin-bottom: 20px;
+}
+
+.btn_to_add_comment {
+  width: 100px;
+  height: 30px;
+  left: 70%;
+  top: 150px;
+  position: absolute;
+
+}
