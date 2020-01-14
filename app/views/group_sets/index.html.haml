@@ -13,8 +13,8 @@
           = group_set.created_at
         .groupset_item
           グループ数: #{group_set.groups.count}
-      -# %br
-  %br
-  .item
-    = link_to "管理者ログイン", login_path
+    %br
+    .left_link
+      = link_to login_path do
+        管理者ログイン
   = javascript_include_tag 'packs/group_set_index.bundle'

@@ -1,1 +1,27 @@
-groups#show
+#js-group_set_show
+.group_main
+  .group_name
+    %h1 Group#{@group_number}(#{@group_set.created_at.strftime('%m月%d日')})
+  .group_data
+    .group_member
+      - @group.members.each do |member|
+        %p= "#{member.full_name}"
+    .group_restaurant
+      - if @group.restaurant.present?
+        .group_restaurant_name
+          %h2= @group.restaurant.name
+        .group_restaurant_description
+          - if @group.restaurant.description.present?
+            %p= @group.restaurant.description
+          - else
+            %p お店詳細ページから詳しい説明を入力しよう！
+        .group_restaurant_url
+          お店URL :
+          = link_to @group.restaurant.url, @group.restaurant.url, target: "_blank"
+  %br
+  .link_items
+    .left_link
+      = link_to "一覧に戻る", group_set_path(@group_set)
+    .right_link
+      = link_to "編集する", edit_group_set_group_path(@group)
+  = javascript_include_tag 'packs/group_set_show.bundle'

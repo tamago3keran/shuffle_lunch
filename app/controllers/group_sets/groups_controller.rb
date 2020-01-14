@@ -1,7 +1,9 @@
 class GroupSets::GroupsController < ApplicationController
   before_action :load_resource
 
-  def show; end
+  def show
+    @group_number = params[:group_number]
+  end
 
   def edit; end
 
@@ -14,8 +16,8 @@ class GroupSets::GroupsController < ApplicationController
         @group_set = GroupSet.find(params[:group_set_id])
         @group = Group.find(params[:id])
       when :edit
-        @group_set = GroupSet.find(params[:group_set_id])
-        @group = @group_set.groups.find(params[:id])
+        # @group_set = GroupSet.find(params[:group_set_id])
+        @group = Group.find(params[:id])
       when :update
         @group_set = GroupSet.find(params[:group_set_id])
         @group = @group_set.groups.find(params[:id])
