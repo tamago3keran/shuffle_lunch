@@ -23,5 +23,6 @@
     .left_link
       = link_to "一覧に戻る", group_set_path(@group_set)
     .right_link
-      = link_to "編集する", edit_group_set_group_path(@group)
+      = link_to "編集する", edit_group_set_group_path(@group_set,
+        @group, group_number: @group_number)
   = javascript_include_tag 'packs/group_set_show.bundle'

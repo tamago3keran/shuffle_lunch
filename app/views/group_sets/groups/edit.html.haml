@@ -1,1 +1,12 @@
-groups#edit
+#js-group_set_show
+.group_main
+  .group_name
+    %h1 Group#{@group_number}(#{@group.created_at.strftime('%m月%d日')})
+  .edit_message
+    %h2 行ったお店を登録する
+  .edit_form
+    = form_for (@group, url: group_set_group_path, method: patch) do |f|
+      = f.label :restaurant
+      = f.select :restaurant
+      = f.submit "登録する"
+  = javascript_include_tag 'packs/group_set_show.bundle'

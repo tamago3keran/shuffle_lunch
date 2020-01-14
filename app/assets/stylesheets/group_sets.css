@@ -114,11 +114,11 @@ a.groups {
 
 .group_main {
   width: 70%;
-  margin: 0 auto
+  margin: 0 auto;
 }
 
 .group_name {
-  margin: 15px auto;
+  margin: 0 auto;
 }
 
 .group_data {
@@ -144,4 +144,8 @@ a.groups {
 
 .group_restaurant_url > a {
   word-break: break-all;
+}
+
+.edit_message {
+  text-align: center;
 }
