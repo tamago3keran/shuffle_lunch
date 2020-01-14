@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
   
   root to: "group_sets#index"
-  resources :restaurants
+  resources :restaurants do
+    resources :restaurant_notes, only: [:create]
+  end
   namespace :admin do
     resources :users, only: [:index, :new, :create] do
       scope module: :users do

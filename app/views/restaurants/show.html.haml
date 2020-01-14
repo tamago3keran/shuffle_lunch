@@ -8,9 +8,22 @@
     お店の説明
     %p
       =@restaurant.description
-
+    
+    お店の口コミ
+  .restaurant_notes
+    .restaurant_note
+      %p.class_writer_name 口コミ者名前
+      %p.class_comment 口コミ内容
+      %p.class_time_to_be_submitted 投稿時間
+    
   %p
     ▼口コミを投稿する
+    = @restaurant_notes
+
+    = form_for @restaurant_note, url: restaurant_restaurant_notes_path(params[:id]) do |f|
+      = f.text_field :writer_name, placeholder: '名前', value: nil, required: true, class: "name_of_restaurant"
+      = f.text_field :comment, placeholder: '口コミ', value: nil, required: true, class: "url_of_restaurant"
+      =submit_tag "投稿する", class: "btn_to_add_restaurant"
   %br
   = link_to "一覧に戻る", restaurants_path, class: "btn_back_to_index_page"
   = link_to "削除する", restaurant_path, method: :delete, data: {confirm: "本当に削除しますか？"}, class: "btn_to_delete_restaurant"
