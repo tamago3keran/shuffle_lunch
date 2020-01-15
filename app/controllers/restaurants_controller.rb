@@ -17,8 +17,8 @@ class RestaurantsController < ApplicationController
       flash[:notice] = "お店を削除しました"
       redirect_to restaurants_path
     else
-      flash[:error] = "お店の削除に失敗しました"
-      redirect_to request.referrer||root_url
+      flash.now[:error] = "お店の削除に失敗しました"
+      render :show
     end
   end
   
