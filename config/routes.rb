@@ -4,6 +4,10 @@ Rails.application.routes.draw do
   resources :restaurants do
     resources :restaurant_notes, only: [:create]
   end
+  root to: "group_sets#index"
+  get "/login", to: "sessions#new"
+  post "/login", to: "sessions#create"
+  delete "/logout", to: "sessions#destroy"
   namespace :admin do
     resources :users, only: [:index, :new, :create] do
       scope module: :users do
@@ -18,4 +22,5 @@ Rails.application.routes.draw do
     end
   end
   resources :group_sets, only: [:index, :show]
+  resources :restaurants
 end
