@@ -15,6 +15,7 @@ module.exports = {
     admin_group_set_new: './src/javascripts/pages/admin/group_sets/group_set_new.js',
     admin_group_set_show: './src/javascripts/pages/admin/group_sets/group_set_show.js',
     admin_group_edit: './src/javascripts/pages/admin/group_edit.js',
+    admin_group_new: './src/javascripts/pages/admin/group_new.js',
   },
 
   output: {
