@@ -1,6 +1,10 @@
 #js-login_new
 .main
   %h1 管理者ログイン
+  .alert
+    - flash.each do |message_type, message|
+      = content_tag(:div, message, class: message_type)
+
   = form_for :session, url: login_path do |f|
     = f.label :email
     %br
