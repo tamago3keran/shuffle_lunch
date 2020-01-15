@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::Base
   before_action :basic_auth, if: :production?
+  include SessionsHelper
 
   private
     def production?

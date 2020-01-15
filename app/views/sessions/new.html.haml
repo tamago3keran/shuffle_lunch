@@ -1,0 +1,16 @@
+#js-login_new
+.main
+  %h1 管理者ログイン
+  = form_for :session, url: login_path do |f|
+    = f.label :email
+    %br
+    = f.email_field :email, value: nil, required: true
+    %br
+    = f.label :password
+    %br
+    = f.password_field :password, vaule: nil, required: true
+    %br
+    = f.submit "ログイン"
+  %br
+  =link_to "チーム分け一覧に戻る", group_sets_path
+  = javascript_include_tag 'packs/login_new.bundle'
