@@ -24,6 +24,7 @@ class Sidebar extends React.Component {
             <ListItemGraphic graphic={<MaterialIcon icon="account_box" />} />
             <ListItemText primaryText="Users" />
           </ListItem>
+
           <ListItem
             tag="a"
             href="/group_sets"
