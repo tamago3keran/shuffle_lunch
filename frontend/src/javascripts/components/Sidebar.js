@@ -16,14 +16,14 @@ class Sidebar extends React.Component {
   render() {
     return (
       <Drawer className="sidebar-container">
+        { this.props.admin ? this._renderAdminSideBarList() : this._renderClientSideBarList() }
+      </Drawer>
+    )
+  }
+
+  _renderClientSideBarList() {
+    return (
         <List>
-          <ListItem
-            tag="a"
-            href="/users"
-            activated={this.props.activeList == 'users'}>
-            <ListItemGraphic graphic={<MaterialIcon icon="account_box" />} />
-            <ListItemText primaryText="Users" />
-          </ListItem>
           <ListItem
             tag="a"
             href="/group_sets"
@@ -38,8 +38,42 @@ class Sidebar extends React.Component {
             <ListItemGraphic graphic={<MaterialIcon icon="storefront" />} />
             <ListItemText primaryText="Restaurants" />
           </ListItem>
+          <ListItem
+            tag="a"
+            href="/login"
+            activated={this.props.activeList == 'admin'}>
+            <ListItemGraphic graphic={<MaterialIcon icon="exit_to_app" />} />
+            <ListItemText primaryText="ログイン" />
+          </ListItem>
         </List>
-      </Drawer>
+    );
+  }
+
+  _renderAdminSideBarList() {
+    return (
+        <List>
+        <ListItem
+            tag="a"
+            href="/admin/users"
+            activated={this.props.activeList == 'users'}>
+            <ListItemGraphic graphic={<MaterialIcon icon="person" />} />
+            <ListItemText primaryText="Users" />
+          </ListItem>
+          <ListItem
+            tag="a"
+            href="/admin/group_sets"
+            activated={this.props.activeList == 'admin_groups'}>
+            <ListItemGraphic graphic={<MaterialIcon icon="group" />} />
+            <ListItemText primaryText="Groups" />
+          </ListItem>
+          <ListItem
+            tag="a"
+            href="/login"
+            activated={this.props.activeList == 'admin'}>
+            <ListItemGraphic graphic={<MaterialIcon icon="undo" />} />
+            <ListItemText primaryText="ログアウト" />
+          </ListItem>
+        </List>
     );
   }
 }

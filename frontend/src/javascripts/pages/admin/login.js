@@ -3,6 +3,6 @@ import ReactDOM from 'react-dom';
 import Sidebar from '../../components/Sidebar';
 
 ReactDOM.render(
-  <Sidebar activeList="groups" />,
-  document.getElementById('js-group_edit'),
+  <Sidebar activeList="admin" />,
+  document.getElementById('js-login'),
 );
