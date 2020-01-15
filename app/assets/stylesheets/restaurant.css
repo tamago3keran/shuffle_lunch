@@ -133,6 +133,10 @@
   font-weight: normal;
 }
 
+.restaurant_notes > nav {
+ 
+}
+
 .restaurant_note {
   height: 100px;;
   width: 25%;
@@ -140,6 +144,7 @@
   position: relative;
   margin-right: 10px;
   margin-bottom: 20px;
+  padding: 5px;
 }
 
 .class_writer_name {

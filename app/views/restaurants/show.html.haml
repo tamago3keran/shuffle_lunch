@@ -20,6 +20,7 @@
             = restaurant_note.comment
           %p.class_time_to_be_submitted 
             = restaurant_note.created_at
+      = paginate(@restaurant_notes)
   %p
     ▼口コミを投稿する
 
