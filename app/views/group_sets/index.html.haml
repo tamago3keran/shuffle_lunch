@@ -1,4 +1,19 @@
 #js-group_set_index
-.main
-  %h1 groups#index
+.groupset_main
+  .item
+    %h1 過去のランチ
+  .item
+    - if @group_sets.present?
+      = paginate(@group_sets)
+      %br
+  .index_item
+    - @group_sets.each do |group_set|
+      = link_to group_set_path(group_set), class: "group_sets" do
+        .groupset_item
+          = group_set.created_at
+        .groupset_item
+          グループ数: #{group_set.groups.count}
+  %br
+  .item
+    = link_to "管理者ログイン", login_path
   = javascript_include_tag 'packs/group_set_index.bundle'
