@@ -6,6 +6,11 @@ class GroupSets::GroupsController < ApplicationController
   def edit; end
 
   def update
+    if @group.update_attributes(restaurant: params[:group][:restaurant])
+      redirect_to group_set_group_path(@group_set, @group, group_number: @group_number), flash: { notice: "お店の更新に成功しました!" }
+    else
+      redirect_to group_set_group_path(@group_set, @group, group_number: @group_number), flash: { error: "お店の更新に失敗しました!" }
+    end
   end
 
   private
@@ -23,6 +28,7 @@ class GroupSets::GroupsController < ApplicationController
       when :update
         @group_set = GroupSet.find(params[:group_set_id])
         @group = @group_set.groups.find(params[:id])
+        @group_number = params[:group_number]
       end
     end
 end
