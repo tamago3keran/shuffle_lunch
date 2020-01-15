@@ -31,6 +31,13 @@ class Sidebar extends React.Component {
             <ListItemGraphic graphic={<MaterialIcon icon="group" />} />
             <ListItemText primaryText="Groups" />
           </ListItem>
+          <ListItem
+            tag="a"
+            href="/restaurants"
+            activated={this.props.activeList == 'restaurants'}>
+            <ListItemGraphic graphic={<MaterialIcon icon="storefront" />} />
+            <ListItemText primaryText="Restaurants" />
+          </ListItem>
         </List>
       </Drawer>
     );

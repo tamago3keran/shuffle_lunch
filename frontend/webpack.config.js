@@ -9,6 +9,9 @@ module.exports = {
     group_set_new: './src/javascripts/pages/group_sets/group_set_new.js',
     user_index: './src/javascripts/pages/users/user_index.js',
     user_new: './src/javascripts/pages/users/user_new.js',
+    restaurant_show: './src/javascripts/pages/restaurants/restaurant_show.js',
+    restaurant_index: './src/javascripts/pages/restaurants/restaurant_index.js',
+    restaurant_new: './src/javascripts/pages/restaurants/restaurant_new.js',
   },
 
   output: {
