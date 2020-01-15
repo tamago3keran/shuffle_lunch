@@ -23,7 +23,6 @@
       = paginate(@restaurant_notes)
   %p
     ▼口コミを投稿する
-
     = form_for @restaurant_note, url: restaurant_restaurant_notes_path(params[:id]) do |f|
       = f.text_field :writer_name, placeholder: '名前', value: nil, required: true, class: "form_of_writer_name"
       = f.text_area :comment, placeholder: '口コミ', value: nil, required: true, class: "form_of_comment"
