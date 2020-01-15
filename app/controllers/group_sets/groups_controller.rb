@@ -16,7 +16,7 @@ class GroupSets::GroupsController < ApplicationController
         @group_set = GroupSet.find(params[:group_set_id])
         @group = Group.find(params[:id])
       when :edit
-        # @group_set = GroupSet.find(params[:group_set_id])
+        @group_set = GroupSet.find(params[:group_set_id])
         @group = Group.find(params[:id])
       when :update
         @group_set = GroupSet.find(params[:group_set_id])
