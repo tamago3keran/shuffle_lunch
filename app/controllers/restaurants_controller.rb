@@ -1,4 +1,5 @@
 class RestaurantsController < ApplicationController
+
   def index
     @restaurants = Restaurant.all.desc(:created_at).page(params[:page]).per(10)
   end
@@ -8,16 +9,20 @@ class RestaurantsController < ApplicationController
 
   def new
     @restaurant = Restaurant.new
+    path = Rails.application.routes.recognize_path(request.referer)
+    if path[:controller] == "group_sets/groups" && path[:action] == "edit"
+      session[:forwarding_url] = request.referrer
+    end
   end
 
   def create
     @restaurant = Restaurant.new(restaurant_params)
     if @restaurant.save
       flash[:notice] = "お店登録に成功しました！"
-      redirect_to restaurants_path
+      redirect_back_or restaurants_path
     else
       flash[:error] = "お店登録に失敗しました！"
-      redirect_to new_restaurant_path
+      redirect_back_or new_restaurant_path
     end
   end
 
