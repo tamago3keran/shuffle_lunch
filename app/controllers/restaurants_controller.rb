@@ -6,7 +6,6 @@ class RestaurantsController < ApplicationController
   def show
     @restaurant = Restaurant.find(params[:id])
     @restaurant_notes = @restaurant.restaurant_notes.all.desc(:created_at).page(params[:page]).per(6)
-    @restaurant_note = RestaurantNote.new
   end
 
   def new
