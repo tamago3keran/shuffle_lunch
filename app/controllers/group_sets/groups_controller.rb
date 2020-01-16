@@ -7,10 +7,10 @@ class GroupSets::GroupsController < ApplicationController
 
   def update
     if @group.update_attributes(restaurant: params[:group][:restaurant])
-      flash[:success] = "お店の更新に成功しました!"
+      flash[:success] = "更新に成功しました!"
       redirect_to group_set_group_path(@group_set, @group, group_number: @group_number)
     else
-      flash[:danger] = "お店の更新に失敗しました!"
+      flash[:danger] = "更新に失敗しました!"
       redirect_to group_set_group_path(@group_set, @group, group_number: @group_number)
     end
   end
