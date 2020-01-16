@@ -18,4 +18,5 @@ Rails.application.routes.draw do
   end
   resources :group_sets, only: [:index, :show]
   resources :restaurants
+  resources :matching_scores, only: [:index]
 end
