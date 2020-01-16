@@ -1,13 +1,10 @@
 module SessionsHelper
-
   def login(admin_user)
     session[:admin_user_id] = admin_user.id
   end
 
   def current_admin_user
-    if session[:admin_user_id]
-      @current_admin_user ||= AdminUser.find(session[:admin_user_id])
-    end
+    @current_admin_user ||= AdminUser.find(session[:admin_user_id]) if session[:admin_user_id]
   end
 
   def logged_in?

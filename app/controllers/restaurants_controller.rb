@@ -22,7 +22,7 @@ class RestaurantsController < ApplicationController
       render :show
     end
   end
-  
+
   def create
     @restaurant = Restaurant.new(restaurant_params)
     if @restaurant.save
@@ -34,7 +34,7 @@ class RestaurantsController < ApplicationController
     end
   end
 
-  def edit 
+  def edit
     @restaurant = Restaurant.find(params[:id])
   end
 
