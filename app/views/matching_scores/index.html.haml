@@ -1,5 +1,7 @@
 #js-user_index
 .main
   %h1 マッチングスコア
-  = @matching_score
+  - @matching_scores.each do |matching_score| 
+    .restaurant_index
+      = matching_score.score
   = javascript_include_tag 'packs/user_index.bundle'
