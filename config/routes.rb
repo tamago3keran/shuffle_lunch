@@ -4,7 +4,6 @@ Rails.application.routes.draw do
   resources :restaurants do
     resources :restaurant_notes, only: [:create]
   end
-  root to: "group_sets#index"
   get "/login", to: "sessions#new"
   post "/login", to: "sessions#create"
   delete "/logout", to: "sessions#destroy"
