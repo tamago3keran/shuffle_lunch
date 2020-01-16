@@ -45,9 +45,9 @@ h1 {
 }
 
 .alert-notice {
-  background-color: #33CCFF;
+  background-color: #28a745;
 }
 
 .alert-error {
-  background-color: #FF367F;
+  background-color: #dc3545;
 }
