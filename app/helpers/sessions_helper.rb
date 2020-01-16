@@ -13,7 +13,13 @@ module SessionsHelper
 
   def logout
     session.delete(:admin_user_id)
+    flash[:notice] = "ログアウトしました"
     @current_admin_user = nil
+  end
+
+  def redirect_back_or(default)
+    redirect_to(session[:forwarding_url] || default)
+    session.delete(:forwarding_url)
   end
 
   def store_location

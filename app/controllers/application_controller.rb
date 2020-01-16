@@ -15,14 +15,9 @@ class ApplicationController < ActionController::Base
 
     def require_admin_login
       unless logged_in?
-        flash[:danger] = "ログインしてください"
+        flash[:error] = "ログインしてください"
         store_location
         redirect_to login_url
       end
-    end
-
-    def redirect_back_or(default)
-      redirect_to(session[:forwarding_url] || default)
-      session.delete(:forwarding_url)
     end
 end
