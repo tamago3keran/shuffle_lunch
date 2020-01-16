@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
   root to: "group_sets#index"
+  resources :restaurants do
+    resources :restaurant_notes, only: [:create]
+  end
   get "/login", to: "sessions#new"
   post "/login", to: "sessions#create"
   delete "/logout", to: "sessions#destroy"
