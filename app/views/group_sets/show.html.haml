@@ -4,7 +4,7 @@
     %h1 #{@group_set.created_at.strftime('%Y年%m月%d日')}のグループ
   .index_item
     - @groups.each_with_index do |group, i|
-      = link_to group_set_group_path(@group_set, group), class: "groups" do
+      = link_to group_set_group_path(@group_set, group, group_number: i+1), class: "groups" do
         .group_item
           .group_name
             %h2 Group#{i+1}
@@ -15,13 +15,15 @@
           .grouprestaurant
             .grouprestaurant_name
               = group.restaurant.name.truncate(17)
-            - if group.restaurant.description.present?
-              .grouprestaurant_des
-                = group.restaurant.description.truncate(60)
+            .grouprestaurant_des
+              - if group.restaurant.description.present?
+                = group.restaurant.description.truncate(70)
+              - else
+                お店詳細がありません。
         - else
           .grouprestaurant_blank
             行ったお店を登録しよう！
     %br
-    .left-item
+    .left_link
       = link_to "一覧に戻る", group_sets_path
   = javascript_include_tag 'packs/group_set_show.bundle'
