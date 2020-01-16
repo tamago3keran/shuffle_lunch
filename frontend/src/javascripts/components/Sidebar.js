@@ -23,57 +23,57 @@ class Sidebar extends React.Component {
 
   _renderClientSideBarList() {
     return (
-        <List>
-          <ListItem
-            tag="a"
-            href="/group_sets"
-            activated={this.props.activeList == 'groups'}>
-            <ListItemGraphic graphic={<MaterialIcon icon="group" />} />
-            <ListItemText primaryText="Groups" />
-          </ListItem>
-          <ListItem
-            tag="a"
-            href="/restaurants"
-            activated={this.props.activeList == 'restaurants'}>
-            <ListItemGraphic graphic={<MaterialIcon icon="storefront" />} />
-            <ListItemText primaryText="Restaurants" />
-          </ListItem>
-          <ListItem
-            tag="a"
-            href="/login"
-            activated={this.props.activeList == 'admin'}>
-            <ListItemGraphic graphic={<MaterialIcon icon="exit_to_app" />} />
-            <ListItemText primaryText="ログイン" />
-          </ListItem>
-        </List>
+      <List>
+        <ListItem
+          tag="a"
+          href="/group_sets"
+          activated={this.props.activeList == 'groups'}>
+          <ListItemGraphic graphic={<MaterialIcon icon="group" />} />
+          <ListItemText primaryText="グループ" />
+        </ListItem>
+        <ListItem
+          tag="a"
+          href="/restaurants"
+          activated={this.props.activeList == 'restaurants'}>
+          <ListItemGraphic graphic={<MaterialIcon icon="storefront" />} />
+          <ListItemText primaryText="お店一覧" />
+        </ListItem>
+        <ListItem
+          tag="a"
+          href="/login"
+          activated={this.props.activeList == 'login'}>
+          <ListItemGraphic graphic={<MaterialIcon icon="exit_to_app" />} />
+          <ListItemText primaryText="ログイン" />
+        </ListItem>
+      </List>
     );
   }
 
   _renderAdminSideBarList() {
     return (
-        <List>
+      <List>
         <ListItem
-            tag="a"
-            href="/admin/users"
-            activated={this.props.activeList == 'users'}>
-            <ListItemGraphic graphic={<MaterialIcon icon="person" />} />
-            <ListItemText primaryText="Users" />
-          </ListItem>
-          <ListItem
-            tag="a"
-            href="/admin/group_sets"
-            activated={this.props.activeList == 'admin_groups'}>
-            <ListItemGraphic graphic={<MaterialIcon icon="group" />} />
-            <ListItemText primaryText="Groups" />
-          </ListItem>
-          <ListItem
-            tag="a"
-            href="/login"
-            activated={this.props.activeList == 'admin'}>
-            <ListItemGraphic graphic={<MaterialIcon icon="undo" />} />
-            <ListItemText primaryText="ログアウト" />
-          </ListItem>
-        </List>
+          tag="a"
+          href="/admin/group_sets"
+          activated={this.props.activeList == 'adminGroups'}>
+          <ListItemGraphic graphic={<MaterialIcon icon="group" />} />
+          <ListItemText primaryText="グループ管理" />
+        </ListItem>
+        <ListItem
+          tag="a"
+          href="/admin/users"
+          activated={this.props.activeList == 'adminUsers'}>
+          <ListItemGraphic graphic={<MaterialIcon icon="person" />} />
+          <ListItemText primaryText="ユーザー管理" />
+        </ListItem>
+        <ListItem
+          tag="a"
+          href="/logout"
+          activated={this.props.activeList == 'logout'}>
+          <ListItemGraphic graphic={<MaterialIcon icon="undo" />} />
+          <ListItemText primaryText="ログアウト" />
+        </ListItem>
+      </List>
     );
   }
 }

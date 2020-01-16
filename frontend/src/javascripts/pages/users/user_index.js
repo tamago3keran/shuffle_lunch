@@ -3,6 +3,6 @@ import ReactDOM from 'react-dom';
 import Sidebar from '../../components/Sidebar';
 
 ReactDOM.render(
-  <Sidebar activeList="users" admin={true} />,
+  <Sidebar activeList="adminUsers" admin={true} />,
   document.getElementById('js-user_index'),
 );
