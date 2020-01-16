@@ -1,0 +1,18 @@
+#js-user_index
+.main
+  .restaurant_name
+    =@restaurant.name
+  .restaurant_url
+    =link_to "お店のURLはこちら", @restaurant.url, target: blank?
+  .restaurant_description
+    お店の説明
+    %p
+      =@restaurant.description
+
+  %p
+    ▼口コミを投稿する
+  %br
+  = link_to "一覧に戻る", restaurants_path, class: "btn_back_to_index_page"
+  = link_to "編集する", edit_restaurant_path, class: "btn_to_edit_page"
+  = link_to "削除する", restaurant_path, method: :delete, data: {confirm: "本当に削除しますか？"}, class: "btn_to_delete_restaurant"
+  = javascript_include_tag 'packs/user_index.bundle'
