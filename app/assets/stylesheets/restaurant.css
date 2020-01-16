@@ -181,3 +181,19 @@
   top: 150px;
   position: absolute;
 }
+
+/*お店編集ページのレイアウト*/
+.edit_restaurant_form {
+  width: 100%;
+}
+
+.btn_to_edit_restaurant {
+  width: 100px;
+  height: 30px;
+  position: absolute;
+  left: 70%;
+}
+
+.edit_restaurant {
+  position: relative;
+}
