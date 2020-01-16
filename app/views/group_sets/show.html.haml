@@ -1,7 +1,7 @@
 #js-group_set_show
 .groupset_main
   .item
-    %h1 #{@group_set.created_at.strftime('%Y/%m/%d')}のグループ
+    %h1 #{@group_set.created_at.strftime('%Y年%m月%d日')}のグループ
   .index_item
     - @groups.each_with_index do |group, i|
       = link_to group_set_group_path(@group_set, group), class: "groups" do
@@ -15,8 +15,9 @@
           .grouprestaurant
             .grouprestaurant_name
               = group.restaurant.name.truncate(17)
-            .grouprestaurant_des
-              = group.restaurant.description.truncate(60)
+            - if group.restaurant.description.present?
+              .grouprestaurant_des
+                = group.restaurant.description.truncate(60)
         - else
           .grouprestaurant_blank
             行ったお店を登録しよう！
