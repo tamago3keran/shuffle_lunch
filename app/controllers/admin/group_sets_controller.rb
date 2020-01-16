@@ -1,6 +1,6 @@
 class Admin::GroupSetsController < ApplicationController
   before_action :load_resource
-  before_action :logged_in_admin_user
+  before_action :require_admin_login
 
   def index; end
 

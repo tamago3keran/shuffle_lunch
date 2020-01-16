@@ -1,0 +1,34 @@
+#js-user_index
+.main
+  .restaurant_name
+    =@restaurant.name
+  .restaurant_url
+    =link_to "お店のURLはこちら", @restaurant.url, target: blank?
+  .restaurant_description
+    お店の説明
+    %p
+      =@restaurant.description
+    
+    お店の口コミ
+    .restaurant_notes
+      -@restaurant_notes.each do |restaurant_note| 
+        .restaurant_note
+          %p.class_writer_name
+            投稿者：  
+            = restaurant_note.writer_name
+          %p.class_comment 
+            = restaurant_note.comment
+          %p.class_time_to_be_submitted 
+            = restaurant_note.created_at
+      = paginate(@restaurant_notes)
+  %p
+    ▼口コミを投稿する
+    = form_for @restaurant.restaurant_notes.build, url: restaurant_restaurant_notes_path(params[:id]) do |f|
+      = f.text_field :writer_name, placeholder: '名前', value: nil, required: true, class: "form_of_writer_name"
+      = f.text_area :comment, placeholder: '口コミ', value: nil, required: true, class: "form_of_comment"
+      =submit_tag "投稿する", class: "btn_to_add_comment", data: {confirm: "この口コミを登録しますか？"}
+  %br
+  = link_to "一覧に戻る", restaurants_path, class: "btn_back_to_index_page"
+  = link_to "編集する", edit_restaurant_path, class: "btn_to_edit_page"
+  = link_to "削除する", restaurant_path, method: :delete, data: {confirm: "本当に削除しますか？"}, class: "btn_to_delete_restaurant"
+  = javascript_include_tag 'packs/user_index.bundle'

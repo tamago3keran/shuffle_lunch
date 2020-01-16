@@ -5,6 +5,8 @@ class RestaurantsController < ApplicationController
   end
 
   def show
+    @restaurant = Restaurant.find(params[:id])
+    @restaurant_notes = @restaurant.restaurant_notes.all.desc(:created_at).page(params[:page]).per(6)
   end
 
   def new
@@ -12,6 +14,17 @@ class RestaurantsController < ApplicationController
     path = Rails.application.routes.recognize_path(request.referer)
     if path[:controller] == "group_sets/groups" && path[:action] == "edit"
       session[:forwarding_url] = request.referrer
+    end
+  end
+
+  def destroy
+    restaurant = Restaurant.find(params[:id])
+    if restaurant.destroy
+      flash[:notice] = "お店を削除しました"
+      redirect_to restaurants_path
+    else
+      flash.now[:error] = "お店の削除に失敗しました"
+      render :show
     end
   end
 
@@ -23,6 +36,21 @@ class RestaurantsController < ApplicationController
     else
       flash[:error] = "お店登録に失敗しました！"
       redirect_back_or new_restaurant_path
+    end
+  end
+
+  def edit
+    @restaurant = Restaurant.find(params[:id])
+  end
+
+  def update
+    @restaurant = Restaurant.find(params[:id])
+    if @restaurant.update_attributes(restaurant_params)
+      flash[:notice] = "お店情報を更新しました"
+      redirect_to @restaurant
+    else
+      flash.now[:notice] = "お店の編集に失敗しました"
+      render 'edit'
     end
   end
 

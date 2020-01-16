@@ -13,7 +13,7 @@ class ApplicationController < ActionController::Base
       end
     end
 
-    def logged_in_admin_user
+    def require_admin_login
       unless logged_in?
         flash[:danger] = "ログインしてください"
         store_location
