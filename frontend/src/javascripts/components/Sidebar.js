@@ -29,7 +29,7 @@ class Sidebar extends React.Component {
           href="/group_sets"
           activated={this.props.activeList == 'groups'}>
           <ListItemGraphic graphic={<MaterialIcon icon="group" />} />
-          <ListItemText primaryText="グループ" />
+          <ListItemText primaryText="グループ一覧" />
         </ListItem>
         <ListItem
           tag="a"
