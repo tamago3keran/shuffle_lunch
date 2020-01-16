@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-
   root to: "group_sets#index"
   resources :restaurants do
     resources :restaurant_notes, only: [:create]
