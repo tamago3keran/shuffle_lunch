@@ -16,6 +16,7 @@
 
 .restaurant_index {
   width: 100%;
+  height: 7%;
   padding: 5px 30px;
   border: 1px solid #c0bdbd;
 }
@@ -77,6 +78,10 @@
 
 .new_restaurant {
   position: relative;
+}
+
+.restaurant_registered_time {
+  font-size: 12px;
 }
 
 /*お店詳細ページのスタイリング*/
