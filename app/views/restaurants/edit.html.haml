@@ -1,0 +1,10 @@
+#js-user_index
+.main
+  %h1  お店情報を更新する
+  .edit_restaurant_form
+  = form_for @restaurant, url: restaurant_path, method: :patch do |f|
+    = render partial: 'form', locals: {f: f}
+    =submit_tag "更新する", class: "btn_to_edit_restaurant"
+  %br
+  =link_to "一覧に戻る", restaurants_path, class: "btn_back_to_index_page"
+= javascript_include_tag 'packs/user_index.bundle'
