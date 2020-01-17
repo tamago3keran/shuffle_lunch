@@ -1,4 +1,4 @@
-#js-group_set_index
+#js-admin_group_set_index
 .main
   %h1 チーム分け一覧
   - if @group_sets.present?
@@ -18,4 +18,4 @@
   = link_to "チームを作成する", new_admin_group_set_path
   - if logged_in?
     = link_to "ログアウト", logout_path, method: :delete
-  = javascript_include_tag 'packs/group_set_index.bundle'
+  = javascript_include_tag 'packs/admin_group_set_index.bundle'
