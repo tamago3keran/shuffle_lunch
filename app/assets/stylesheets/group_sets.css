@@ -154,11 +154,6 @@ a.groups {
   width: 100%;
 }
 
-.edit_group {
-  /* width: 80%; */
-  margin: 0 auto;
-}
-
 .edit_group select {
   width: 100%;
   -webkit-appearance: none;
