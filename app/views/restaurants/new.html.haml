@@ -1,10 +1,14 @@
 #js-restaurant_new
-.main
-  %h1  お店を追加する
-  .add_restaurant_form
-  = form_for @restaurant, url: restaurants_path do |f|
-    = render partial: 'form', locals: {f: f}
-    =submit_tag "追加する", class: "btn_to_add_restaurant"
+.restaurant_new
+  .item
+    %h1 お店を追加する
+  .form_item
+    = form_for @restaurant, url: restaurants_path do |f|
+      = render partial: 'form', locals: {f: f}
+      .input
+        %p= f.submit "追加する", class: "submit"
   %br
-  =link_to "一覧に戻る", restaurants_path, class: "btn_back_to_index_page"
+  .link_items
+    .link
+      = link_to "一覧に戻る", restaurants_path
 = javascript_include_tag 'packs/restaurant_new.bundle'
