@@ -16,13 +16,13 @@
 
 .restaurant_index {
   width: 100%;
+  height: 5%;
   padding: 5px 30px;
   border: 1px solid #c0bdbd;
 }
 
 .restaurant_index > a {
-  display: flex;
-  margin-left: 70%;
+  float: right;
 }
 
 .pagination {
@@ -77,6 +77,10 @@
 
 .new_restaurant {
   position: relative;
+}
+
+.restaurant_registered_time {
+  font-size: 12px;
 }
 
 /*お店詳細ページのスタイリング*/
