@@ -1,4 +1,4 @@
-#js-group_set_show
+#js-admin_group_set_show
 .main
   %h1 チーム分け
   - @groups.each_with_index do |group, i|
@@ -13,4 +13,4 @@
   = link_to "チームを追加する", new_admin_group_set_group_path(@group_set)
   %br
   = link_to "一覧に戻る", admin_group_sets_path
-  = javascript_include_tag 'packs/group_set_show.bundle'
+  = javascript_include_tag 'packs/admin_group_set_show.bundle'
