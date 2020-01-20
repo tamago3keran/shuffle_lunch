@@ -28,7 +28,6 @@ class RestaurantsController < ApplicationController
   def create
     @restaurant = Restaurant.new(restaurant_params)
     @forward_url = params[:forward_url]
-    byebug
     if @restaurant.save
       flash[:notice] = "お店登録に成功しました！"
       if @forward_url
