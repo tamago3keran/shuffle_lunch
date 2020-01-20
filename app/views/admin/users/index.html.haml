@@ -1,4 +1,4 @@
-#js-user_index
+#js-admin_user_index
 .main
   %h1 ユーザ一覧
   - @users.each do |user|
@@ -10,4 +10,4 @@
     %br
   %br
   = link_to "ユーザを作成する", new_admin_user_path
-  = javascript_include_tag 'packs/user_index.bundle'
+  = javascript_include_tag 'packs/admin_user_index.bundle'

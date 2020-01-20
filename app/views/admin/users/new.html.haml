@@ -1,4 +1,4 @@
-#js-user_new
+#js-admin_user_new
 .main
   %h1 ユーザ作成
   = form_for @user, url: admin_users_path do |f|
@@ -7,4 +7,4 @@
     = submit_tag "送信"
   %br
   = link_to "戻る", admin_users_path
-  = javascript_include_tag 'packs/user_new.bundle'
+  = javascript_include_tag 'packs/admin_user_new.bundle'

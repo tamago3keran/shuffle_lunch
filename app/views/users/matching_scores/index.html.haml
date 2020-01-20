@@ -1,0 +1,12 @@
+#js-user_matching_score_index
+.main
+  %h1 
+    = "#{@user.full_name}さんのマッチングスコア"
+  .matching_score_index
+  -@matching_scores.each do |matching_score|
+    .score_index
+      %p.class_score
+        = matching_score.score
+      %p.class_partner_name 
+        = matching_score.partner.full_name
+  = javascript_include_tag 'packs/user_matching_score_index.bundle'

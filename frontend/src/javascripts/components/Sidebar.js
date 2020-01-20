@@ -40,6 +40,13 @@ class Sidebar extends React.Component {
         </ListItem>
         <ListItem
           tag="a"
+          href="/users"
+          activated={this.props.activeList == 'users'}>
+          <ListItemGraphic graphic={<MaterialIcon icon="accessibility" />} />
+          <ListItemText primaryText="マッチングスコアを確認" />
+        </ListItem>
+        <ListItem
+          tag="a"
           href="/login"
           activated={this.props.activeList == 'login'}>
           <ListItemGraphic graphic={<MaterialIcon icon="exit_to_app" />} />
