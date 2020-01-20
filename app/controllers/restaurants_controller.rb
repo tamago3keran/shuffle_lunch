@@ -10,10 +10,8 @@ class RestaurantsController < ApplicationController
 
   def new
     @restaurant = Restaurant.new
-    path = Rails.application.routes.recognize_path(request.referer)
-    if path[:controller] == "group_sets/groups" && path[:action] == "edit"
-      @forwarding_url = request.referrer
-    end
+    @forward_url = session[:forward_url]
+    session[:forward_url] = nil
   end
 
   def destroy
@@ -29,11 +27,12 @@ class RestaurantsController < ApplicationController
 
   def create
     @restaurant = Restaurant.new(restaurant_params)
-    @forwarding_url = params[:forwarding_url]
+    @forward_url = params[:forward_url]
+    byebug
     if @restaurant.save
       flash[:notice] = "お店登録に成功しました！"
-      if @forwarding_url
-        redirect_to @forwarding_url
+      if @forward_url
+        redirect_to @forward_url
       else
         redirect_to restaurants_path
       end
