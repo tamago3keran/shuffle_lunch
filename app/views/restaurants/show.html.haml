@@ -4,11 +4,12 @@
     %h1= @restaurant.name
   .restaurant_url
     =link_to @restaurant.url, target: "_blank"
-  .restaurant_des
-    - if @restaurant.description.present?
+  - if @restaurant.description.present?
+    .restaurant_des
       = @restaurant.description
-    - else
-      詳しいお店詳細を入力しよう！
+  - else
+    .restaurant_des_blank
+      %p 詳しいお店詳細を入力しよう！
   .restaurant_note_text
     みんなの口コミ
   .restaurantnote_index
@@ -32,7 +33,7 @@
       = f.text_field :writer_name, placeholder: '名前', value: nil, required: true, class: "form_note_name"
       = f.text_area :comment, placeholder: '口コミ', value: nil, required: true, class: "form_note_comment"
       .input
-        %p= f.submit "投稿する", data: {confirm: "この口コミを登録しますか？"}, class: "submit"
+        %p= f.submit "口コミを投稿する", data: {confirm: "この口コミを登録しますか？"}, class: "submit"
   %br
   .link_items
     .link

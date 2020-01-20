@@ -22,7 +22,7 @@
 
 .link {
   display: inline-block;
-  border-radius: 4px;
+  border-radius: 5px;
   border: 1px solid black;
   font-size: 20px;
   padding: 5px 10px;
@@ -44,7 +44,7 @@
 }
 
 .groups {
-  border-radius: 3px;
+  border-radius: 5px;
   border: 1px solid black;
   padding: 20px;
   display: flex;
@@ -74,7 +74,7 @@ a.groups {
 
 .grouprestaurant {
   width: 30%;
-  border-radius: 3px;
+  border-radius: 5px;
   border: 1px solid black;
   padding: 5px;
   margin-right: 20px;
@@ -84,7 +84,7 @@ a.groups {
 
 .grouprestaurant_blank {
   width: 30%;
-  border-radius: 3px;
+  border-radius: 5px;
   border: 1px solid black;
   padding: 5px;
   margin-right: 20px;
@@ -104,6 +104,7 @@ a.groups {
 }
 
 .group_data {
+  width: 100%;
   margin: 0 auto;
   display: flex;
 }
@@ -130,11 +131,36 @@ a.groups {
 
 .group_show_restaurant_blank {
   width: 50%;
-  border-radius: 3px;
+  border-radius: 5px;
   border: 1px solid black;
   padding: 5px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+.edit_message {
+  text-align: center;
+}
+
+.edit_group select {
+  width: 100%;
+  -webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	margin-bottom: 20px;
+	padding: 10px;
+	font-size: 15px;
+	line-height: 1.1em;
+	border-radius: 5px;
+}
+
+.edit_group select::-ms-expand {
+	display: none;
+}
+
+.add_restaurant_message {
+  margin-bottom: 15px;
+  text-align: right;
 }

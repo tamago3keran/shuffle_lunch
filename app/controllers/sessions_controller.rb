@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
       flash[:notice] = "ログインしました"
       redirect_back_or admin_group_sets_path
     else
-      flash[:error] = "ログインに失敗しました"
+      flash.now[:error] = "ログインに失敗しました"
       render "new"
     end
   end

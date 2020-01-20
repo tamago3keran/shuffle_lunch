@@ -81,6 +81,14 @@
   margin: 20px 0;
 }
 
+.restaurant_des_blank {
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  border-radius: 5px;
+  border: 1px solid black;
+}
+
 /*お店口コミスタイリング*/
 .restaurant_note_text {
   font-size: 20px;
