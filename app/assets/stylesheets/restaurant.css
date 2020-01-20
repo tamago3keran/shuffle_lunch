@@ -32,22 +32,6 @@
 }
 
 /*お店新規追加ページのスタイリング*/
-.form_item {
-  width: 100%;
-}
-
-.input {
-  text-align: center;
-}
-
-.submit {
-  display: inline-block;
-  border-radius: 5px;
-  padding: 5px 10px;
-  font-size: 20px;
-  border: 1px solid black;
-}
-
 .form_restaurant_name {
   width: 50%;
   height: 20px;
@@ -89,7 +73,6 @@
   border: 1px solid black;
 }
 
-/*お店口コミスタイリング*/
 .restaurant_note_text {
   font-size: 20px;
   margin: 10px 0;
@@ -112,16 +95,16 @@
   border: 1px solid black;
 }
 
+.note_time {
+  text-align: right;
+}
+
 .restaurant_notes_blank {
   width: 100%;
   margin: 0 auto;
   text-align: center;
   border-radius: 5px;
   border: 1px solid black;
-}
-
-.note_time {
-  text-align: right;
 }
 
 .form_note_name {
