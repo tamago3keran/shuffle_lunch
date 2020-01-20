@@ -31,6 +31,10 @@ h1 {
   display: flex;
 }
 
+.admin_main {
+  display: block;
+}
+
 .main {
   width: 70%;
   margin: 0 auto;
