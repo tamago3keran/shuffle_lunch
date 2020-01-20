@@ -12,9 +12,7 @@ class RestaurantsController < ApplicationController
     @restaurant = Restaurant.new
     path = Rails.application.routes.recognize_path(request.referer)
     if path[:controller] == "group_sets/groups" && path[:action] == "edit"
-      @group_set_id = params[:group_set_id]
-      @group_id = params[:group_id]
-      @group_number = params[:group_number]
+      @forwarding_url = request.referrer
     end
   end
 
@@ -31,20 +29,17 @@ class RestaurantsController < ApplicationController
 
   def create
     @restaurant = Restaurant.new(restaurant_params)
+    @forwarding_url = params[:forwarding_url]
     if @restaurant.save
       flash[:notice] = "お店登録に成功しました！"
-      if params[:group_set_id] && params[:group_id]
-        redirect_to "/group_sets/#{params[:group_set_id]}/groups/#{params[:group_id]}/edit?group_number=#{params[:group_number]}"
+      if @forwarding_url
+        redirect_to @forwarding_url
       else
         redirect_to restaurants_path
       end
     else
-      flash[:error] = "お店登録に失敗しました！"
-      if params[:group_set_id] && params[:group_id]
-        redirect_to "/group_sets/#{params[:group_set_id]}/groups/#{params[:group_id]}/edit?group_number=#{params[:group_number]}"
-      else
-        redirect_to restaurants_path
-      end
+      flash.now[:error] = "お店登録に失敗しました！"
+      render :new
     end
   end
 

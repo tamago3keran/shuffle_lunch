@@ -3,9 +3,7 @@
   %h1  お店を追加する
   .add_restaurant_form
   = form_for @restaurant, url: restaurants_path do |f|
-    = hidden_field_tag :group_set_id, @group_set_id
-    = hidden_field_tag :group_id, @group_id
-    = hidden_field_tag :group_number, @group_number
+    = hidden_field_tag :forwarding_url, @forwarding_url
     = render partial: 'form', locals: {f: f}
     =submit_tag "追加する", class: "btn_to_add_restaurant"
   %br
