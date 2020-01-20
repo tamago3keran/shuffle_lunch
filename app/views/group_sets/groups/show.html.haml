@@ -1,13 +1,13 @@
 #js-group_set_show
-.group_main
-  .group_name
+.main
+  .item
     %h1 Group#{@group_number}(#{@group_set.created_at.strftime('%m月%d日')})
   .group_data
     .group_member
       - @group.members.each do |member|
         %p= "#{member.full_name}"
-    .group_restaurant
-      - if @group.restaurant.present?
+    - if @group.restaurant.present?
+      .group_show_restaurant
         .group_restaurant_name
           %h2= @group.restaurant.name
         .group_restaurant_description
@@ -18,6 +18,9 @@
         .group_restaurant_url
           お店URL :
           = link_to @group.restaurant.url, @group.restaurant.url, target: "_blank"
+    - else
+      .group_show_restaurant_blank
+        行ったお店を登録しよう！
   %br
   .link_items
     .link

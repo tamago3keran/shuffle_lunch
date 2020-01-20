@@ -9,13 +9,15 @@
 }
 
 .index_item {
-  width: 80%;
+  width: 100%;
   margin: 0 auto;
 }
 
 .link_items {
+  width: 100%;
   display: flex;
   justify-content: space-between;
+  margin-bottom: 20px;
 }
 
 .link {
@@ -38,9 +40,6 @@
   display: flex;
   justify-content: space-around;
   text-decoration: none;
-}
-
-a.group_sets {
   color: black;
 }
 
@@ -104,17 +103,13 @@ a.groups {
   margin: 0 auto;
 }
 
-.group_name {
-  margin: 0 auto;
-}
-
 .group_data {
   margin: 0 auto;
   display: flex;
 }
 
 .group_member {
-  width: 45%;
+  width: 50%;
   display: flex;
   flex-wrap: wrap;
 }
@@ -125,10 +120,21 @@ a.groups {
   text-decoration: underline;
 }
 
-.group_restaurant {
-  width: 55%;
+.group_show_restaurant {
+  width: 50%;
 }
 
-.group_restaurant_url > a {
+.group_restaurant_url {
   word-break: break-all;
+}
+
+.group_show_restaurant_blank {
+  width: 50%;
+  border-radius: 3px;
+  border: 1px solid black;
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }

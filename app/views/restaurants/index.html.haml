@@ -1,5 +1,5 @@
 #js-restaurant_index
-.groupset_main
+.main
   .item
     %h1 みんなが行ったお店一覧
   .link.item
@@ -7,17 +7,18 @@
   %br
   .index_item
     - @restaurants.each do |restaurant|
-      = link_to restaurant_path(restaurant), class: "group_sets" do
-        .index_restaurant_name
-          = restaurant.name
-        .restaurant_registered_time
-          = "登録日：#{restaurant.created_at.strftime('%Y年%m月%d日')}"
+      = link_to restaurant_path(restaurant), class: "restaurants" do
+        .restaurant_name_and_time
+          .index_restaurant_name
+            = restaurant.name
+          .index_restaurant_registeredtime
+            = "登録日：#{restaurant.created_at.strftime('%Y年%m月%d日')}"
         - if restaurant.description.present?
           .index_restaurant_des
-            = restaurant.description.truncate(30)
+            = simple_format(restaurant.description.truncate(27))
         - else
           .index_restaurant_des
-            お店詳細が入力されていません
+            %p お店詳細が入力されていません
   .item
     = paginate(@restaurants)
-  = javascript_include_tag 'packs/users_index.bundle'
+  = javascript_include_tag 'packs/restaurant_index.bundle'

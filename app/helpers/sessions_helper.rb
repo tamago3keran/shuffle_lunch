@@ -13,6 +13,7 @@ module SessionsHelper
 
   def logout
     session.delete(:admin_user_id)
+    flash[:notice] = "ログアウトしました"
     @current_admin_user = nil
   end
 
