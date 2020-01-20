@@ -3,10 +3,14 @@
   %h1 
     = "#{@user.full_name}さんのマッチングスコア"
   .matching_score_index
-  -@matching_scores.each do |matching_score|
-    .score_index
-      %p.class_score
-        = matching_score.score
-      %p.class_partner_name 
-        = matching_score.partner.full_name
+  %table
+    %tr
+      %th 相手の名前
+      %th スコア
+    -@matching_scores.each do |matching_score|
+      %tr.class_score_index
+        %th.class_partner_name 
+          = matching_score.partner.full_name
+        %th.class_score
+          = matching_score.score.ceil(2).to_f
   = javascript_include_tag 'packs/user_matching_score_index.bundle'

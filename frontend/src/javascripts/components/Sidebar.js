@@ -43,7 +43,7 @@ class Sidebar extends React.Component {
           href="/users"
           activated={this.props.activeList == 'users'}>
           <ListItemGraphic graphic={<MaterialIcon icon="accessibility" />} />
-          <ListItemText primaryText="マッチングスコアを確認" />
+          <ListItemText primaryText="マッチングスコア" />
         </ListItem>
         <ListItem
           tag="a"
