@@ -12,4 +12,12 @@ class ApplicationController < ActionController::Base
         username == ENV["BASIC_AUTH_USER"] && password == ENV["BASIC_AUTH_PASSWORD"]
       end
     end
+
+    def require_admin_login
+      unless logged_in?
+        flash[:danger] = "ログインしてください"
+        store_location
+        redirect_to login_url
+      end
+    end
 end

@@ -1,4 +1,6 @@
 class Admin::GroupSets::AppliedStatusesController < ApplicationController
+  before_action :require_admin_login
+
   def update
     @group_set = GroupSet.find(params[:group_set_id])
     params[:cancel_update] ? CancelUpdateMatchingScoresService.call(@group_set) :

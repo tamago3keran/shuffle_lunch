@@ -5,6 +5,7 @@ class RestaurantsController < ApplicationController
 
   def show
     @restaurant = Restaurant.find(params[:id])
+    @restaurant_notes = @restaurant.restaurant_notes.all.desc(:created_at).page(params[:page]).per(6)
   end
 
   def new
@@ -21,7 +22,7 @@ class RestaurantsController < ApplicationController
       render :show
     end
   end
-  
+
   def create
     @restaurant = Restaurant.new(restaurant_params)
     if @restaurant.save
@@ -33,7 +34,7 @@ class RestaurantsController < ApplicationController
     end
   end
 
-  def edit 
+  def edit
     @restaurant = Restaurant.find(params[:id])
   end
 

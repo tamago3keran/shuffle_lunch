@@ -1,4 +1,4 @@
-#js-user_index
+#js-restaurant_index
 .main
   %h1 みんなが行ったお店一覧
   .btn
@@ -7,7 +7,9 @@
     .restaurant_index
       = restaurant.name 
       = link_to "お店の詳細", restaurant_path(restaurant)
+      .restaurant_registered_time
+        = "登録日：#{restaurant.created_at.strftime('%Y年%m月%d日')}"
   = paginate(@restaurants)
-  = javascript_include_tag 'packs/user_index.bundle'
+  = javascript_include_tag 'packs/restaurant_index.bundle'
   
     

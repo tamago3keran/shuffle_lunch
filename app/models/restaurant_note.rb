@@ -1,6 +1,6 @@
 class RestaurantNote
   include Mongoid::Document
-  include Mongoid::Timestamps 
+  include Mongoid::Timestamps
 
   embedded_in :restaurant
 

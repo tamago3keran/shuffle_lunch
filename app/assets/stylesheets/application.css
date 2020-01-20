@@ -34,3 +34,20 @@ h1 {
 .main {
   display: block;
 }
+
+/*flashメッセージの表示*/
+.alert {
+  width: 100%;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  color: #fff;
+}
+
+.alert-notice {
+  background-color: #28a745;
+}
+
+.alert-error {
+  background-color: #dc3545;
+}
