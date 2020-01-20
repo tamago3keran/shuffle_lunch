@@ -92,6 +92,7 @@
 /*お店口コミスタイリング*/
 .restaurant_note_text {
   font-size: 20px;
+  margin: 10px 0;
 }
 
 .restaurantnote_index {
@@ -126,7 +127,7 @@
 .form_note_name {
   width: 50%;
   height: 20px;
-  margin: 20px auto;
+  margin-bottom: 20px;
   border: 1px solid black;
   border-radius: 3px;
   font-size: 15px;
