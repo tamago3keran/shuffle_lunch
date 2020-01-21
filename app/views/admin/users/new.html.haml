@@ -1,5 +1,5 @@
 #js-admin_user_new
-.main
+.admin_main
   %h1 ユーザ作成
   = form_for @user, url: admin_users_path do |f|
     = f.text_field :first_name, placeholder: 'First Name', value: nil, required: true
