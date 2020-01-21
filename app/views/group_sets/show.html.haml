@@ -15,15 +15,15 @@
           .grouprestaurant
             .grouprestaurant_name
               = group.restaurant.name.truncate(17)
-            .grouprestaurant_des
-              - if group.restaurant.description.present?
+            - if group.restaurant.description.present?
+              .grouprestaurant_des
                 = group.restaurant.description.truncate(70)
-              - else
-                お店詳細が入力されていません
+            - else
+              .grouprestaurant_des_blank
+                %p お店詳細ページから詳しい説明を入力しよう！
         - else
           .grouprestaurant_blank
-            行ったお店を登録しよう！
+            %p 行ったお店を登録しよう！
     %br
-    .link
-      = link_to "一覧に戻る", group_sets_path
+    = link_to "一覧に戻る", group_sets_path, class: "default_link"
   = javascript_include_tag 'packs/group_set_show.bundle'

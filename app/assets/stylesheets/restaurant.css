@@ -11,7 +11,7 @@
 }
 
 .restaurant_name_and_time {
-  width: 50%;
+  width: 40%;
   display: flex;
   flex-direction: column;
 }
@@ -27,8 +27,20 @@
 }
 
 .index_restaurant_des {
-  width: 50%;
+  width: 60%;
   text-align: center;
+  border-radius: 5px;
+  border: 1px solid black;
+  padding: 5px;
+}
+
+.index_restaurant_des_blank {
+  color: #666;
+  width: 60%;
+  text-align: center;
+  border-radius: 5px;
+  background-color: #eee;
+  padding: 5px;
 }
 
 /*お店登録ページ*/
@@ -66,11 +78,12 @@
 }
 
 .restaurant_des_blank {
+  color: #666;
   width: 100%;
   margin: 0 auto;
   text-align: center;
   border-radius: 5px;
-  border: 1px solid black;
+  background-color: #eee;
 }
 
 .restaurant_note_text {
@@ -100,11 +113,12 @@
 }
 
 .restaurant_notes_blank {
+  color: #666;
   width: 100%;
   margin: 0 auto;
   text-align: center;
   border-radius: 5px;
-  border: 1px solid black;
+  background-color: #eee;
 }
 
 .form_note_name {

@@ -2,8 +2,8 @@
 .main
   .item
     %h1 みんなが行ったお店一覧
-  .link.item
-    = link_to "お店を追加する", new_restaurant_path
+  .item
+    = link_to "お店を追加する", new_restaurant_path, class: "info_link"
   %br
   .index_item
     - @restaurants.each do |restaurant|
@@ -15,10 +15,10 @@
             = "登録日：#{restaurant.created_at.strftime('%Y年%m月%d日')}"
         - if restaurant.description.present?
           .index_restaurant_des
-            = simple_format(restaurant.description.truncate(27))
+            %p= simple_format(restaurant.description.truncate(35))
         - else
-          .index_restaurant_des
-            %p お店詳細が入力されていません
+          .index_restaurant_des_blank
+            %p お店詳細を入力しよう！
   .item
     = paginate(@restaurants)
   = javascript_include_tag 'packs/restaurant_index.bundle'

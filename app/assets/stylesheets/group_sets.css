@@ -53,10 +53,19 @@ a.groups {
   font-size: 13px;
 }
 
+.grouprestaurant_des_blank {
+  margin: 0 auto;
+  color: #666;
+  border-radius: 5px;
+  background-color: #eee;
+  padding: 5px 21px;
+}
+
 .grouprestaurant_blank {
   width: 30%;
+  color: #666;
   border-radius: 5px;
-  border: 1px solid black;
+  background-color: #eee;
   padding: 5px;
   margin-right: 20px;
   display: flex;
@@ -88,14 +97,24 @@ a.groups {
   width: 50%;
 }
 
+.group_restaurant_des_blank {
+  color: #666;
+  text-align: center;
+  border-radius: 5px;
+  background-color: #eee;
+  padding: 5px 21px;
+  margin-bottom: 10px;
+}
+
 .group_restaurant_url {
   word-break: break-all;
 }
 
 .group_show_restaurant_blank {
+  color: #666;
   width: 50%;
   border-radius: 5px;
-  border: 1px solid black;
+  background-color: #eee;
   padding: 5px;
   display: flex;
   flex-direction: column;

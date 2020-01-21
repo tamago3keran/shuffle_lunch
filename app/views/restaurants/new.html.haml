@@ -7,9 +7,8 @@
       = hidden_field_tag :forward_url, @forward_url
       = render partial: 'form', locals: {f: f}
       .input
-        %p= f.submit "追加する", class: "submit"
+        = f.submit "追加する", class: "submit_primary"
   %br
   .link_items
-    .link
-      = link_to "一覧に戻る", restaurants_path
+    = link_to "一覧に戻る", restaurants_path, class: "default_link"
 = javascript_include_tag 'packs/restaurant_new.bundle'
