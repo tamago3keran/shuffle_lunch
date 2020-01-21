@@ -9,6 +9,6 @@ class Restaurant
   field :url, type: String
   field :description, type: String
 
-  validates :name, presence: true
-  validates :url, presence: true
+  validates :name, presence: true, uniqueness: true
+  validates :url, presence: true, uniqueness: true, format: /\A#{URI::regexp(%w(http https))}\z/
 end
