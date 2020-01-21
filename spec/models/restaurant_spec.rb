@@ -3,27 +3,29 @@ require "rails_helper"
 describe Restaurant do
   let(:restaurant) { Restaurant.new(name: "test", url: "http://hoge.test/", description: "testtest") }
 
-  it "is not valid without name" do
-    restaurant.name = nil
-    expect(restaurant).not_to be_valid
+  describe "name" do
+    it "is not valid without name" do
+      restaurant.name = nil
+      expect(restaurant).not_to be_valid
+    end
+
+    it "should have a unique name" do
+      Restaurant.create(name: "test", url: "http://example.com", description: "")
+      expect(restaurant.valid?).to eq(false)
+    end  
   end
 
-  it "is not valid without url" do
-    restaurant.url = nil
-    expect(restaurant).not_to be_valid
-  end
+  describe "url" do
+    it "is not valid without url" do
+      restaurant.url = nil
+      expect(restaurant).not_to be_valid
+    end
 
-  it "should have a unique name" do
-    Restaurant.create(name: "test", url: "http://example.com", description: "")
-    expect(restaurant.valid?).to eq(false)
-  end
+    it "should have a unique url" do
+      Restaurant.create(name: "test1", url: "http://hoge.test/", description: "")
+      expect(restaurant.valid?).to eq(false)
+    end
 
-  it "should have a unique url" do
-    Restaurant.create(name: "test1", url: "http://hoge.test/", description: "")
-    expect(restaurant.valid?).to eq(false)
-  end
-
-  describe "url format" do
     context "when invalid format" do
       it "should be invalid" do
         invalid_url = %w[example, あ, Https://hoge.test/ ]
