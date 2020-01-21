@@ -1,4 +1,4 @@
-/*お店一覧ページのスタイリング*/
+/*お店一覧ページ*/
 .restaurants {
   box-sizing: border-box;
   border-radius: 3px;
@@ -31,7 +31,7 @@
   text-align: center;
 }
 
-/*お店新規追加ページのスタイリング*/
+/*お店登録ページ*/
 .form_restaurant_name {
   width: 50%;
   height: 20px;
@@ -59,7 +59,7 @@
   font-size: 15px;
 }
 
-/*お店詳細ページのスタイリング*/
+/*お店詳細ページ*/
 .restaurant_url {
   word-break: break-all;
   margin: 20px 0;
