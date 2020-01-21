@@ -33,7 +33,7 @@
       = f.text_field :writer_name, placeholder: '名前', value: nil, required: true, class: "form_note_name"
       = f.text_area :comment, placeholder: '口コミ', value: nil, required: true, class: "form_note_comment"
       .input
-        %p= f.submit "口コミを投稿する", data: {confirm: "この口コミを登録しますか？"}, class: "submit"
+        %p= f.submit "口コミを投稿する", data: {confirm: "口コミは一度登録されると編集・削除ができません！本当にこの口コミを登録しますか？"}, class: "submit"
   %br
   .link_items
     .link
@@ -42,5 +42,5 @@
       .link
         = link_to "編集する", edit_restaurant_path
       .link
-        = link_to "削除する", restaurant_path, method: :delete, data: {confirm: "本当に削除しますか？"}
+        = link_to "削除する", restaurant_path, method: :delete, data: {confirm: "お店を削除すると今まで投稿された口コミも削除されます！本当に削除しますか？"}
   = javascript_include_tag 'packs/restaurant_show.bundle'
