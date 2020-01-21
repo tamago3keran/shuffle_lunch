@@ -12,6 +12,6 @@
         %th.class_partner_name 
           = matching_score.partner.full_name
         %th.class_score
-          = matching_score.score.ceil(2).to_f
+          = (matching_score.score.ceil(4)*100).round(2)
   = link_to "一覧に戻る", users_path, class: "btn_back_to_index_page"
   = javascript_include_tag 'packs/user_matching_score_index.bundle'
