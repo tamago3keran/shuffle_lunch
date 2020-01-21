@@ -1,49 +1,4 @@
-.groupset_main {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-}
-
-.item {
-  margin: 0 auto;
-}
-
-.index_item {
-  width: 80%;
-  margin: 0 auto;
-}
-
-.link_items {
-  display: flex;
-  justify-content: space-between;
-}
-
-.left_link {
-  display: inline-block;
-  border-radius: 4px;
-  border: 1px solid black;
-  font-size: 20px;
-  padding: 5px 10px;
-}
-
-.left_link > a {
-  text-decoration: none;
-  color: black;
-}
-
-.right_link {
-  display: inline-block;
-  border-radius: 4px;
-  border: 1px solid black;
-  font-size: 20px;
-  padding: 5px 10px;
-}
-
-.right_link > a {
-  text-decoration: none;
-  color: black;
-}
-
+/*グループ分け一覧ページ*/
 .group_sets {
   border-radius: 3px;
   border: 1px solid black;
@@ -51,14 +6,12 @@
   display: flex;
   justify-content: space-around;
   text-decoration: none;
-}
-
-a.group_sets {
   color: black;
 }
 
+/*グループ分け詳細ページ*/
 .groups {
-  border-radius: 3px;
+  border-radius: 5px;
   border: 1px solid black;
   padding: 20px;
   display: flex;
@@ -88,7 +41,7 @@ a.groups {
 
 .grouprestaurant {
   width: 30%;
-  border-radius: 3px;
+  border-radius: 5px;
   border: 1px solid black;
   padding: 5px;
   margin-right: 20px;
@@ -96,9 +49,13 @@ a.groups {
   flex-direction: column;
 }
 
+.grouprestaurant_des {
+  font-size: 13px;
+}
+
 .grouprestaurant_blank {
   width: 30%;
-  border-radius: 3px;
+  border-radius: 5px;
   border: 1px solid black;
   padding: 5px;
   margin-right: 20px;
@@ -108,26 +65,15 @@ a.groups {
   align-items: center;
 }
 
-.grouprestaurant_des {
-  font-size: 13px;
-}
-
-.group_main {
-  width: 70%;
-  margin: 0 auto;
-}
-
-.group_name {
-  margin: 0 auto;
-}
-
+/*グループ詳細ページ*/
 .group_data {
+  width: 100%;
   margin: 0 auto;
   display: flex;
 }
 
 .group_member {
-  width: 45%;
+  width: 50%;
   display: flex;
   flex-wrap: wrap;
 }
@@ -138,20 +84,28 @@ a.groups {
   text-decoration: underline;
 }
 
-.group_restaurant {
-  width: 55%;
+.group_show_restaurant {
+  width: 50%;
 }
 
-.group_restaurant_url > a {
+.group_restaurant_url {
   word-break: break-all;
 }
 
-.edit_message {
-  text-align: center;
+.group_show_restaurant_blank {
+  width: 50%;
+  border-radius: 5px;
+  border: 1px solid black;
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-.edit_form {
-  width: 100%;
+/*グループ編集ページ*/
+.edit_message {
+  text-align: center;
 }
 
 .edit_group select {
@@ -160,30 +114,17 @@ a.groups {
 	-moz-appearance: none;
 	appearance: none;
 	margin-bottom: 20px;
-	padding: 7px 30px 7px 10px;
-	font-size: 93%;
+	padding: 10px;
+	font-size: 15px;
 	line-height: 1.1em;
 	border-radius: 5px;
-	border: none;
 }
 
 .edit_group select::-ms-expand {
 	display: none;
 }
 
-.input {
-  text-align: center;
-}
-
-.submit {
-  display: inline-block;
-  border-radius: 5px;
-  padding: 5px 10px;
-  font-size: 20px;
-  border: 1px solid black;
-}
-
 .add_restaurant_message {
-  padding: 15px;
+  margin-bottom: 15px;
   text-align: right;
 }

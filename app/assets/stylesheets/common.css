@@ -1,0 +1,61 @@
+/*flashメッセージの表示*/
+.alert {
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  color: #fff;
+}
+
+.alert-notice {
+  background-color: #28a745;
+}
+
+.alert-error {
+  background-color: #dc3545;
+}
+
+/*共通するスタイリング*/
+.item {
+  margin: 0 auto;
+}
+
+.index_item {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.link_items {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.link {
+  display: inline-block;
+  border-radius: 5px;
+  border: 1px solid black;
+  font-size: 20px;
+  padding: 5px 10px;
+}
+
+.link > a {
+  text-decoration: none;
+  color: black;
+}
+
+.form_item {
+  width: 100%;
+}
+
+.input {
+  text-align: center;
+}
+
+.submit {
+  display: inline-block;
+  border-radius: 5px;
+  padding: 5px 10px;
+  font-size: 20px;
+  border: 1px solid black;
+}
