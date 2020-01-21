@@ -1,15 +1,24 @@
 #js-restaurant_index
 .main
-  %h1 みんなが行ったお店一覧
-  .btn
+  .item
+    %h1 みんなが行ったお店一覧
+  .link.item
     = link_to "お店を追加する", new_restaurant_path
-  - @restaurants.each do |restaurant| 
-    .restaurant_index
-      = restaurant.name 
-      = link_to "お店の詳細", restaurant_path(restaurant)
-      .restaurant_registered_time
-        = "登録日：#{restaurant.created_at.strftime('%Y年%m月%d日')}"
-  = paginate(@restaurants)
+  %br
+  .index_item
+    - @restaurants.each do |restaurant|
+      = link_to restaurant_path(restaurant), class: "restaurants" do
+        .restaurant_name_and_time
+          .index_restaurant_name
+            = restaurant.name
+          .index_restaurant_registeredtime
+            = "登録日：#{restaurant.created_at.strftime('%Y年%m月%d日')}"
+        - if restaurant.description.present?
+          .index_restaurant_des
+            = simple_format(restaurant.description.truncate(27))
+        - else
+          .index_restaurant_des
+            %p お店詳細が入力されていません
+  .item
+    = paginate(@restaurants)
   = javascript_include_tag 'packs/restaurant_index.bundle'
-  
-    

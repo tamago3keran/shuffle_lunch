@@ -69,7 +69,8 @@ class Sidebar extends React.Component {
         <ListItem
           tag="a"
           href="/logout"
-          activated={this.props.activeList == 'logout'}>
+          activated={this.props.activeList == 'logout'}
+          data-method="delete">
           <ListItemGraphic graphic={<MaterialIcon icon="undo" />} />
           <ListItemText primaryText="ログアウト" />
         </ListItem>

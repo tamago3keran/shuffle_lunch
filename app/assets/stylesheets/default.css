@@ -1,0 +1,28 @@
+/*全体のCSS*/
+body {
+  margin: 0px;
+  padding: 0px;
+  font-family: 'roboto';
+}
+
+h1 {
+  margin: 0px;
+  padding: 8px 0px;
+}
+
+.container {
+  width: 100%;
+  display: -webkit-flex;
+  display: flex;
+}
+
+.admin_main {
+  display: block;
+}
+
+.main {
+  width: 70%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
