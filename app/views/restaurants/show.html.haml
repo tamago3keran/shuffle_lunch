@@ -26,9 +26,9 @@
     = form_for @restaurant.restaurant_notes.build, url: restaurant_restaurant_notes_path(params[:id]) do |f|
       = f.text_field :writer_name, placeholder: '名前', value: nil, required: true, class: "form_of_writer_name"
       = f.text_area :comment, placeholder: '口コミ', value: nil, required: true, class: "form_of_comment"
-      =submit_tag "投稿する", class: "btn_to_add_comment", data: {confirm: "この口コミを登録しますか？"}
+      =submit_tag "投稿する", class: "btn_to_add_comment", data: {confirm: "口コミは一度登録されると編集・削除ができません！本当にこの口コミを登録しますか？"}
   %br
   = link_to "一覧に戻る", restaurants_path, class: "btn_back_to_index_page"
   = link_to "編集する", edit_restaurant_path, class: "btn_to_edit_page"
-  = link_to "削除する", restaurant_path, method: :delete, data: {confirm: "本当に削除しますか？"}, class: "btn_to_delete_restaurant"
+  = link_to "削除する", restaurant_path, method: :delete, data: {confirm: "お店を削除すると今まで投稿された口コミも削除されます！本当に削除しますか？"}, class: "btn_to_delete_restaurant"
   = javascript_include_tag 'packs/restaurant_show.bundle'
