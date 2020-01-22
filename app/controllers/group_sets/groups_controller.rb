@@ -3,7 +3,7 @@ class GroupSets::GroupsController < ApplicationController
 
   def show; end
 
-  def edit;
+  def edit
     session[:forward_url] = request.url
   end
 
