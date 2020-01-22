@@ -24,5 +24,10 @@ Rails.application.routes.draw do
       resources :groups, only: [:show, :edit, :update]
     end
   end
+  resources :users, only: [:index] do
+    scope module: :users do
+      resources :matching_scores, only: [:index]
+    end
+  end
   resources :restaurants
 end
