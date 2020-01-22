@@ -1,5 +1,9 @@
 class SessionsController < ApplicationController
   def new
+    if logged_in?
+      flash[:notice] = "ログインしています"
+      redirect_to admin_group_sets_path
+    end
   end
 
   def create
