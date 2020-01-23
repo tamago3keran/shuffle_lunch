@@ -10,6 +10,23 @@ class RestaurantNotesController < ApplicationController
     redirect_to restaurant_path(params[:restaurant_id])
   end
 
+  def edit
+    @restaurant = Restaurant.find(params[:id])
+    @restaurant_note = @restaurant.restaurant_notes.find(params[:restaurant_id ])
+  end
+
+  def update
+    @restaurant = Restaurant.find(params[:id])
+    @restaurant_note = @restaurant.restaurant_notes.find(params[:restaurant_id ])
+    if @restaurant_note.update_attributes(restaurant_notes_params)
+      flash[:notice] = "口コミを変更しました"
+      redirect_to @restaurant
+    else
+      flash.now[:error] = "口コミの編集に失敗しました"
+      render :edit
+    end
+  end
+
   private
     def restaurant_notes_params
       params.require(:restaurant_note).permit(:writer_name, :comment)

@@ -51,7 +51,7 @@ class RestaurantsController < ApplicationController
       flash[:notice] = "お店情報を更新しました"
       redirect_to @restaurant
     else
-      flash.now[:notice] = "お店の編集に失敗しました"
+      flash.now[:error] = "お店の編集に失敗しました"
       render :edit
     end
   end
