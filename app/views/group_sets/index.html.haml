@@ -2,9 +2,8 @@
 .main
   .item
     %h1 シャッフルランチ
-  .item
+  .upper_pagination
     = paginate(@group_sets)
-    %br
   .index_item
     - @group_sets.each do |group_set|
       = link_to group_set_path(group_set), class: "group_sets" do
@@ -12,7 +11,6 @@
           #{group_set.created_at.strftime('%Y年%m月%d日')}のグループ
         .groupset_item
           グループ数: #{group_set.groups.count}
-  %br
-  .item
-    = link_to "管理者ログイン", login_path
+  .lower_pagination
+    = paginate(@group_sets)
   = javascript_include_tag 'packs/group_set_index.bundle'

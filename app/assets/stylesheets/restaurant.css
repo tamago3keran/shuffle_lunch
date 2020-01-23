@@ -1,13 +1,21 @@
 /*お店一覧ページ*/
 .restaurants {
+  height: 100%;
   box-sizing: border-box;
   border-radius: 3px;
-  border: 1px solid black;
+  border: 1px solid #000;
+  margin: auto;
   padding: 10px;
   display: flex;
   justify-content: space-around;
   text-decoration: none;
   color: black;
+  margin-bottom: 1px;
+}
+
+.restaurants:hover {
+  border: 1px solid #007bff;
+  background-color: #cce4ff;
 }
 
 .restaurant_name_and_time {

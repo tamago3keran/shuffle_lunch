@@ -1,17 +1,17 @@
 #js-user_matching_score_index
 .main
-  %h1 
-    = "#{@user.full_name}さんのマッチングスコア"
-  .matching_score_index
-  %table
-    %tr
-      %th 相手の名前
-      %th スコア
+  .item
+    %h1= "#{@user.full_name}さんのマッチングスコア"
+  .table
+    .table_item
+      .th_name 相手の名前
+      .th_score スコア
     -@matching_scores.each do |matching_score|
-      %tr.class_score_index
-        %th.class_partner_name 
+      .table_item.data
+        .table_name
           = matching_score.partner.full_name
-        %th.class_score
+        .table_score
           = (matching_score.score.ceil(4)*100).round(2)
-  = link_to "一覧に戻る", users_path, class: "btn_back_to_index_page"
+    .link_items
+      = link_to "一覧に戻る", users_path, class: "default_link"
   = javascript_include_tag 'packs/user_matching_score_index.bundle'

@@ -4,7 +4,8 @@
     %h1 みんなが行ったお店一覧
   .item
     = link_to "お店を追加する", new_restaurant_path, class: "info_link"
-  %br
+  .upper_pagination
+    = paginate(@restaurants)
   .index_item
     - @restaurants.each do |restaurant|
       = link_to restaurant_path(restaurant), class: "restaurants" do
@@ -19,6 +20,6 @@
         - else
           .index_restaurant_des_blank
             %p お店詳細を入力しよう！
-  .item
+  .lower_pagination
     = paginate(@restaurants)
   = javascript_include_tag 'packs/restaurant_index.bundle'
