@@ -10,6 +10,7 @@ module.exports = {
     restaurant_edit: './src/javascripts/pages/restaurants/restaurant_edit.js',
     restaurant_index: './src/javascripts/pages/restaurants/restaurant_index.js',
     restaurant_new: './src/javascripts/pages/restaurants/restaurant_new.js',
+    restaurant_note_edit: './src/javascripts/pages/restaurant_notes/restaurant_note_edit.js',
     login: './src/javascripts/pages/admin/login.js',
     group_edit: './src/javascripts/pages/admin/group_edit.js',
     admin_group_set_index: './src/javascripts/pages/admin/group_sets/group_set_index.js',
