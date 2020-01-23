@@ -8,13 +8,13 @@ describe RestaurantNotesController do
 
   describe "create" do
     it "redirects to restaurant show page" do
-      post :create, params: {restaurant_id: restaurant.id, restaurant_note: restaurant_note_params}
+      post restaurant_restaurant_notes_path(restaurant), params: { restaurant_id: restaurant.id, restaurant_note: restaurant_note_params }
       expect(response).to redirect_to restaurant_path(restaurant)
     end
 
     it "creates a new Restaurant note" do
       expect {
-        post :create, params: { restaurant_id: restaurant.id, restaurant_note: restaurant_note_params }
+        post restaurant_restaurant_notes_path(restaurant), params: { restaurant_id: restaurant.id, restaurant_note: restaurant_note_params }
       }.to change { Restaurant.find(restaurant.id).restaurant_notes.count }.by(1)
     end
   end
