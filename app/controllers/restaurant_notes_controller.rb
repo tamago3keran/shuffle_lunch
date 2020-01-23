@@ -11,8 +11,8 @@ class RestaurantNotesController < ApplicationController
   end
 
   def destroy
-    restaurant = Restaurant.find(params[:id])
-    restaurant_note = restaurant.restaurant_notes.find(params[:restaurant_id])
+    restaurant = Restaurant.find(params[:restaurant_id])
+    restaurant_note = restaurant.restaurant_notes.find(params[:id])
     if restaurant_note.destroy
       flash[:notice] = "口コミを削除しました"
     else

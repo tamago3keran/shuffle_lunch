@@ -18,7 +18,7 @@
         .note_name
           = "投稿者：#{restaurant_note.writer_name}"
         .link_small
-          = link_to "削除する",restaurant_restaurant_note_path(restaurant_note) , method: :delete, data: {confirm: "本当に削除しますか？"}
+          = link_to "削除する",restaurant_restaurant_note_path(@restaurant, restaurant_note) , method: :delete, data: {confirm: "本当に削除しますか？"}
         .note_comment
           = restaurant_note.comment
         .note_time
