@@ -10,8 +10,7 @@ class RestaurantsController < ApplicationController
 
   def new
     @restaurant = Restaurant.new
-    @forward_url = session[:forward_url]
-    session[:forward_url] = nil
+    session[:forward_url] = request.referrer
   end
 
   def destroy
@@ -27,14 +26,9 @@ class RestaurantsController < ApplicationController
 
   def create
     @restaurant = Restaurant.new(restaurant_params)
-    @forward_url = params[:forward_url]
     if @restaurant.save
       flash[:notice] = "お店登録に成功しました！"
-      if @forward_url
-        redirect_to @forward_url
-      else
-        redirect_to restaurants_path
-      end
+      redirect_to session[:forward_url]
     else
       flash.now[:error] = "お店登録に失敗しました！"
       render :new
