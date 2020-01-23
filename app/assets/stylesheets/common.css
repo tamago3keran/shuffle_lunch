@@ -1,3 +1,11 @@
+/*ログイン状態表示*/
+.login_status {
+  width: 256px;
+  color: white;
+  background-color: #dc3545;
+  text-align: center;
+}
+
 /*flashメッセージの表示*/
 .alert {
   height: 30px;
