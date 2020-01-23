@@ -8,12 +8,6 @@ describe AdminUser do
     password: "password") }
 
   it "is valid with a first name, last name and email, and password" do
-    admin_user = AdminUser.new(
-      first_name: "test",
-      last_name:  "rspec",
-      email:      "test@example.com",
-      password:   "password",
-    )
     expect(admin_user).to be_valid
   end
 
@@ -82,14 +76,14 @@ describe AdminUser do
       expect(admin_user.errors[:password]).to include "can't be blank"
     end
 
-    it "ia not valid with a password that more than 5 characters" do
+    it "is not valid with a password that more than 5 characters" do
       admin_user.password = "a" * 5
       expect(admin_user).not_to be_valid
       expect(admin_user.errors[:password]).to include "is too short (minimum is 6 characters)"
     end
   end
 
-  describe "full_name" do
+  describe "#full_name" do
     it "returns full name" do
       admin_user.first_name = "test"
       admin_user.last_name = "rspec"
