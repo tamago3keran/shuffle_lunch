@@ -179,33 +179,3 @@
   color: #fff;
   background-color: #007bff;
 }
-
-.balloon1 {
-  width: 50%;
-  text-align: center;
-  position: relative;
-  display: block;
-  margin: 0 auto;
-  padding: 7px 10px;
-  min-width: 120px;
-  max-width: 100%;
-  color: #555;
-  font-size: 16px;
-  background: #e0edff;
-  border-radius: 15px;
-}
-
-.balloon1:before {
-  content: "";
-  position: absolute;
-  top: 100%;
-  left: 50%;
-  margin-left: -15px;
-  border: 15px solid transparent;
-  border-top: 15px solid #e0edff;
-}
-
-.balloon1 p {
-  margin: 0;
-  padding: 0;
-}
