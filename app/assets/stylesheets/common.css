@@ -47,6 +47,19 @@
   padding: 5px 10px;
 }
 
+.link_small {
+  display: inline-block;
+  border-radius: 5px;
+  border: 1px solid black;
+  font-size: 15px;
+  padding: 0 5px;
+}
+
+.link_small > a {
+  text-decoration: none;
+  color: black;
+}
+
 .link > a {
   text-decoration: none;
   color: black;
