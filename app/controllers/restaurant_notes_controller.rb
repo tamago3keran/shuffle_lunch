@@ -10,6 +10,17 @@ class RestaurantNotesController < ApplicationController
     redirect_to restaurant_path(params[:restaurant_id])
   end
 
+  def destroy
+    restaurant = Restaurant.find(params[:id])
+    restaurant_note = restaurant.restaurant_notes.find(params[:restaurant_id])
+    if restaurant_note.destroy
+      flash[:notice] = "口コミを削除しました"
+    else
+      flash[:error] = "口コミの削除に失敗しました"
+    end
+    redirect_to restaurant
+  end
+
   private
     def restaurant_notes_params
       params.require(:restaurant_note).permit(:writer_name, :comment)
