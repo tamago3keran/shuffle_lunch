@@ -28,7 +28,11 @@ class RestaurantsController < ApplicationController
     @restaurant = Restaurant.new(restaurant_params)
     if @restaurant.save
       flash[:notice] = "お店登録に成功しました！"
-      redirect_to session[:forward_url]
+      if session[:forward_url].include?("/restaurants")
+        redirect_to restaurant_path(@restaurant)
+      else
+        redirect_to session[:forward_url]
+      end
     else
       flash.now[:error] = "お店登録に失敗しました！"
       render :new
