@@ -40,10 +40,17 @@ class Sidebar extends React.Component {
         </ListItem>
         <ListItem
           tag="a"
+          href="/users"
+          activated={this.props.activeList == 'users'}>
+          <ListItemGraphic graphic={<MaterialIcon icon="accessibility" />} />
+          <ListItemText primaryText="マッチングスコア" />
+        </ListItem>
+        <ListItem
+          tag="a"
           href="/login"
           activated={this.props.activeList == 'login'}>
           <ListItemGraphic graphic={<MaterialIcon icon="exit_to_app" />} />
-          <ListItemText primaryText="ログイン" />
+          <ListItemText primaryText="管理者ログイン" />
         </ListItem>
       </List>
     );
@@ -69,7 +76,8 @@ class Sidebar extends React.Component {
         <ListItem
           tag="a"
           href="/logout"
-          activated={this.props.activeList == 'logout'}>
+          activated={this.props.activeList == 'logout'}
+          data-method="delete">
           <ListItemGraphic graphic={<MaterialIcon icon="undo" />} />
           <ListItemText primaryText="ログアウト" />
         </ListItem>

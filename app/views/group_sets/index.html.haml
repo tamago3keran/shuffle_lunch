@@ -1,5 +1,5 @@
 #js-group_set_index
-.groupset_main
+.main
   .item
     %h1 シャッフルランチ
   .item
@@ -12,7 +12,4 @@
           #{group_set.created_at.strftime('%Y年%m月%d日')}のグループ
         .groupset_item
           グループ数: #{group_set.groups.count}
-  %br
-  .item
-    = link_to "管理者ログイン", login_path
   = javascript_include_tag 'packs/group_set_index.bundle'
