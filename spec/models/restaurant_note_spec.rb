@@ -3,14 +3,14 @@ require "rails_helper"
 describe RestaurantNote do
   let(:restaurant_note) { RestaurantNote.new(comment: "test", writer_name: "example") }
 
-  describe "writer_name" do
+  describe "#writer_name" do
     it "is not valid without writer_name" do
       restaurant_note.writer_name = nil
       expect(restaurant_note).not_to be_valid
     end
   end
 
-  describe "comment" do
+  describe "#comment" do
     it "is not valid without comment" do
       restaurant_note.comment = nil
       expect(restaurant_note).not_to be_valid
