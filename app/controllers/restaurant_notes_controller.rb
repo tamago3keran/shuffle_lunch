@@ -11,13 +11,13 @@ class RestaurantNotesController < ApplicationController
   end
 
   def edit
-    @restaurant = Restaurant.find(params[:id])
-    @restaurant_note = @restaurant.restaurant_notes.find(params[:restaurant_id])
+    @restaurant = Restaurant.find(params[:restaurant_id])
+    @restaurant_note = @restaurant.restaurant_notes.find(params[:id])
   end
 
   def update
-    @restaurant = Restaurant.find(params[:id])
-    @restaurant_note = @restaurant.restaurant_notes.find(params[:restaurant_id])
+    @restaurant = Restaurant.find(params[:restaurant_id])
+    @restaurant_note = @restaurant.restaurant_notes.find(params[:id])
     if @restaurant_note.update_attributes(restaurant_notes_params)
       flash[:notice] = "口コミを変更しました"
       redirect_to @restaurant

@@ -20,7 +20,7 @@
             = "投稿者：#{restaurant_note.writer_name}"
           .links
             .link_small
-              = link_to "編集", edit_restaurant_restaurant_note_path(restaurant_note)
+              = link_to "編集", edit_restaurant_restaurant_note_path(@restaurant, restaurant_note)
         .note_comment
           = restaurant_note.comment
         .note_time
