@@ -26,8 +26,8 @@ describe RestaurantNotesController do
     context "with valid params" do
       it "updates the required restaurant note" do
         put restaurant_restaurant_note_path(restaurant, restaurant_note), params: { restaurant_note: valid_attributes }
-        restaurant.reload
-        expect(restaurant.restaurant_notes.comment).to eq(valid_attributes[:comment])
+        restaurant_note.reload
+        expect(restaurant_note.comment).to eq(valid_attributes[:comment])
       end
 
       it "redirect to restaurant show page" do
@@ -35,18 +35,17 @@ describe RestaurantNotesController do
         expect(response).to redirect_to(restaurant)
       end
     end
+
+    context "with invalid params" do
+      it "does not update the required restaurant note" do
+        put restaurant_restaurant_note_path(restaurant, restaurant_note), params: { restaurant_note: invalid_attributes }
+        restaurant_note.reload
+        expect(restaurant_note.comment).not_to eq(invalid_attributes[:comment])
+      end
+
+      it "render show template" do
+        expect(response).to render_template(:edit)
+      end
+    end
   end
 end
-
-# バリデーショnが追加されてから実装したいためコメントアウト
-    # context "with invalid params" do
-    #   it "does not update the required restaurant note" do
-    #     put restaurant_path(restaurant), params: {id: restaurant.id, restaurant: invalid_attributes}
-    #     restaurant.reload
-    #     expect(restaruant.url).not_to eq(inavalid_attributes[:url])
-    #   end
-
-    #   it "render edit template" do
-    #     expect(response).to render_template :edit
-    #   end
-    # end
