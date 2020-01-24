@@ -33,6 +33,7 @@ class RestaurantsController < ApplicationController
       else
         redirect_to session[:forward_url]
       end
+      session[:forward_url] = nil
     else
       flash.now[:error] = "お店登録に失敗しました！"
       render :new
