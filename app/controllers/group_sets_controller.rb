@@ -11,7 +11,11 @@ class GroupSetsController < ApplicationController
       when :index
         @group_sets = GroupSet.all.desc(:created_at).page(params[:page]).per(10)
       when :show
-        @group_set = GroupSet.find(params[:id])
+        if request.fullpath == "/"
+          @group_set = GroupSet.last
+        else
+          @group_set = GroupSet.find(params[:id])
+        end
         @groups = @group_set.groups
       end
     end
