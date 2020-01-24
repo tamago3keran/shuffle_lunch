@@ -1,7 +1,7 @@
 #js-group_set_show
 .main
   .item
-    - if current_page?(root_path)
+    - if @group_set.created_at.today?
       %h1 今日のグループ
     - else
       %h1 #{@group_set.created_at.strftime('%Y年%m月%d日')}のグループ
