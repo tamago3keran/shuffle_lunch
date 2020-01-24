@@ -44,7 +44,8 @@ describe RestaurantNotesController do
       end
 
       it "render show template" do
-        expect(response).to render_template(:edit)
+        put restaurant_restaurant_note_path(restaurant, restaurant_note), params: { restaurant_note: invalid_attributes }
+        expect(response).to render_template :edit
       end
     end
   end
