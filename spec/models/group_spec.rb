@@ -40,16 +40,9 @@ describe Group do
   end
 
   describe "association with restaurant" do
-    let(:association) do
-      described_class.reflect_on_association(:restaurant)
-    end
     let(:restaurant) { Restaurant.create(name: "restaurant", url: "http://example.com", description: "delicious") }
     let(:group_set) { GroupSet.create }
     let(:group) { Group.new(group_set_id: group_set.id, member_ids: [user.id, partner1.id, partner2.id]) }
-
-    it "returns associated class name" do
-      expect(association.class_name).to eq "Restaurant"
-    end
 
     it "belongs to restaurant" do
       group.restaurant = restaurant
