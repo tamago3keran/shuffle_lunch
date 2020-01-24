@@ -11,7 +11,7 @@ describe AdminUser do
     expect(admin_user).to be_valid
   end
 
-  describe "name" do
+  describe "#name" do
     it "is not valid without a first_name" do
       admin_user.first_name = nil
       expect(admin_user).not_to be_valid
@@ -37,7 +37,7 @@ describe AdminUser do
     end
   end
 
-  describe "email" do
+  describe "#email" do
     it "is not valid without a email" do
       admin_user.email = nil
       expect(admin_user).not_to be_valid
@@ -69,7 +69,7 @@ describe AdminUser do
     end
   end
 
-  describe "password" do
+  describe "#password" do
     it "is not valid without a password" do
       admin_user.password = nil
       expect(admin_user).not_to be_valid
