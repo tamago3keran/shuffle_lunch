@@ -6,7 +6,7 @@ describe RestaurantNotesController do
     { writer_name: "test_name", comment: "example" }
   }
 
-  describe "create" do
+  describe "POST /restaurants/:restaurant_id/restaurant_notes" do
     it "redirects to restaurant show page" do
       post restaurant_restaurant_notes_path(restaurant), params: { restaurant_id: restaurant.id, restaurant_note: restaurant_note_params }
       expect(response).to redirect_to restaurant_path(restaurant)
