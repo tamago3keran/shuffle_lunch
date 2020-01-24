@@ -1,7 +1,10 @@
 #js-group_set_show
 .main
   .item
-    %h1 #{@group_set.created_at.strftime('%Y年%m月%d日')}のグループ
+    - if current_page?(root_path)
+      %h1 今日のグループ
+    - else
+      %h1 #{@group_set.created_at.strftime('%Y年%m月%d日')}のグループ
   .index_item
     - @groups.each_with_index do |group, i|
       = link_to group_set_group_path(@group_set, group, group_number: i+1), class: "groups" do
