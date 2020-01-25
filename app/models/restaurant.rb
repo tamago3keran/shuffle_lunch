@@ -10,5 +10,6 @@ class Restaurant
   field :description, type: String
 
   validates :name, presence: true, uniqueness: true
-  validates :url, presence: true, uniqueness: true, format: /\A#{URI::regexp(%w(http https))}\z/
+  VALID_URL_REGEX = /\A#{URI::regexp(%w(http https))}\z/
+  validates :url, presence: true, uniqueness: true, format: VALID_URL_REGEX
 end

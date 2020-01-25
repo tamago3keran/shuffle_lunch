@@ -4,7 +4,6 @@ describe Restaurant do
   let(:restaurant) { Restaurant.new(name: "test", url: "http://hoge.test/", description: "testtest") }
 
   describe "#name" do
-    before {Restaurant.create(name: "test", url: "http://example.com", description: "")}
 
     it "is not valid without name" do
       restaurant.name = nil
@@ -12,12 +11,12 @@ describe Restaurant do
     end
 
     it "should have a unique name" do
+      Restaurant.create(name: "test", url: "http://example.com", description: "")
       expect(restaurant).not_to be_valid
-    end  
+    end
   end
 
   describe "#url" do
-    before {Restaurant.create(name: "test1", url: "http://hoge.test/", description: "")}
 
     it "is not valid without url" do
       restaurant.url = nil
@@ -25,6 +24,7 @@ describe Restaurant do
     end
 
     it "should have a unique url" do
+      Restaurant.create(name: "test1", url: "http://hoge.test/", description: "")
       expect(restaurant).not_to be_valid
     end
 
