@@ -4,7 +4,6 @@ describe RestaurantNotesController do
   let(:restaurant) { Restaurant.create(name: "test", url: "http://example.com/", description: "") }
   let!(:restaurant_note) { restaurant.restaurant_notes.create(writer_name: "testtest", comment: "example") }
 
-
   describe "DELETE /restaurants/:restaurant_id/restaurant_notes/:id" do
 
     it "destroys the required restaurant note" do
