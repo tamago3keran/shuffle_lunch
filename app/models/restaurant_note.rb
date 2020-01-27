@@ -8,6 +8,6 @@ class RestaurantNote
   field :comment, type: String
   field :writer_name, type: String
 
-  validates :comment, presence: true
+  validates :comment, presence: true, length: { maximum: 100 }
   validates :writer_name, presence: true
 end
