@@ -18,7 +18,7 @@ class RestaurantNotesController < ApplicationController
     else
       flash[:error] = "口コミの削除に失敗しました"
     end
-    redirect_to restaurant
+    redirect_to restaurant_path(restaurant)
   end
 
   private
