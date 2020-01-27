@@ -5,10 +5,10 @@
   .restaurant_url
     =link_to @restaurant.url, target: "_blank"
   - if @restaurant.description.present?
-    .restaurant_des
+    .show_description
       = @restaurant.description
   - else
-    .restaurant_des_blank
+    .show_description_blank
       %p 詳しいお店詳細を入力しよう！
   .restaurant_note_text
     みんなの口コミ

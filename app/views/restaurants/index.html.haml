@@ -15,10 +15,10 @@
           .index_restaurant_registeredtime
             = "登録日：#{restaurant.created_at.strftime('%Y年%m月%d日')}"
         - if restaurant.description.present?
-          .index_restaurant_des
+          .index_description
             %p= simple_format(restaurant.description.truncate(35))
         - else
-          .index_restaurant_des_blank
+          .index_description_blank
             %p お店詳細を入力しよう！
   .lower_pagination
     = paginate(@restaurants)

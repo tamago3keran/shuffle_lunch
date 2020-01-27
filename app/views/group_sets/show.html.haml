@@ -16,13 +16,13 @@
             .grouprestaurant_name
               = group.restaurant.name.truncate(17)
             - if group.restaurant.description.present?
-              .grouprestaurant_des
+              .groupsets_restaurant_description
                 = group.restaurant.description.truncate(70)
             - else
-              .grouprestaurant_des_blank
+              .groupsets_restaurant_description_blank
                 %p お店詳細ページから詳しい説明を入力しよう！
         - else
-          .grouprestaurant_blank
+          .groupsets_restaurant_blank
             %p 行ったお店を登録しよう！
     %br
     = link_to "一覧に戻る", group_sets_path, class: "default_link"

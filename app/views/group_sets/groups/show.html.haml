@@ -11,16 +11,16 @@
         .group_restaurant_name
           %h2= @group.restaurant.name
         - if @group.restaurant.description.present?
-          .group_restaurant_des
+          .groups_restaurant_description
             %p= @group.restaurant.description
         - else
-          .group_restaurant_des_blank
+          .groups_restaurant_description_blank
             %p お店詳細ページから詳しい説明を入力しよう！
         .group_restaurant_url
           お店URL :
           = link_to @group.restaurant.url, @group.restaurant.url, target: "_blank"
     - else
-      .group_show_restaurant_blank
+      .groups_restaurant_blank
         行ったお店を登録しよう！
   %br
   .link_items
