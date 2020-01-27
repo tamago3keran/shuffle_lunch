@@ -3,12 +3,8 @@ require "rails_helper"
 describe RestaurantNotesController do
   let(:restaurant) { Restaurant.create(name: "test", url: "http://example.com/", description: "") }
   let(:restaurant_note) { restaurant.restaurant_notes.create(writer_name: "example_name", comment: "testtesttest") }
-  let(:valid_attributes) {
-    { writer_name: "test1", comment: "a"*99 }
-  }
-  let(:invalid_attributes) {
-    { writer_name: "test1", comment: "a"*101 }
-  }
+  let(:valid_attributes) { { writer_name: "test1", comment: "a" * 99 } }
+  let(:invalid_attributes) { { writer_name: "test1", comment: "a" * 101 } }
 
   describe "GET /restaurants/:restaurant_id/restaurant_notes/:id/edit" do
     it "responses successfully" do

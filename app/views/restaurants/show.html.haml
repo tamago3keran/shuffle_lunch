@@ -16,8 +16,7 @@
     - @restaurant_notes.each do |restaurant_note|
       .restaurant_note
         .restaurant_note_head
-          .note_name
-            = "投稿者：#{restaurant_note.writer_name}"
+          .note_name= "投稿者：#{restaurant_note.writer_name}"
           .links
             .link_small
               = link_to "編集", edit_restaurant_restaurant_note_path(@restaurant, restaurant_note)
@@ -40,11 +39,8 @@
         %p= f.submit "口コミを投稿する", data: {confirm: "口コミは一度登録されると編集・削除ができません！本当にこの口コミを登録しますか？"}, class: "submit"
   %br
   .link_items
-    .link
-      = link_to "一覧に戻る", restaurants_path
+    .link= link_to "一覧に戻る", restaurants_path
     .links
-      .link
-        = link_to "編集する", edit_restaurant_path
-      .link
-        = link_to "削除する", restaurant_path, method: :delete, data: {confirm: "お店を削除すると今まで投稿された口コミも削除されます！本当に削除しますか？"}
+      .link= link_to "編集する", edit_restaurant_path
+      .link= link_to "削除する", restaurant_path, method: :delete, data: {confirm: "お店を削除すると今まで投稿された口コミも削除されます！本当に削除しますか？"}
   = javascript_include_tag 'packs/restaurant_show.bundle'

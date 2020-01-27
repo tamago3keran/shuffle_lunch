@@ -10,6 +10,5 @@
         %p= f.submit "更新する", class: "submit"
   %br
   .link_items
-    .link
-      = link_to "戻る", restaurant_path(@restaurant)
+    .link= link_to "戻る", restaurant_path(@restaurant)
 = javascript_include_tag 'packs/restaurant_note_edit.bundle'

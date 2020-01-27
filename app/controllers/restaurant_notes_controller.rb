@@ -20,7 +20,7 @@ class RestaurantNotesController < ApplicationController
     @restaurant_note = @restaurant.restaurant_notes.find(params[:id])
     if @restaurant_note.update_attributes(restaurant_notes_params)
       flash[:notice] = "口コミを変更しました"
-      redirect_to @restaurant
+      redirect_to restaurant_path(@restaurant)
     else
       flash.now[:error] = "口コミの編集に失敗しました"
       render :edit
