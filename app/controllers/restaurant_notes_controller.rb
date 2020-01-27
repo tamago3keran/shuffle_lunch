@@ -11,6 +11,7 @@ class RestaurantNotesController < ApplicationController
   end
 
   def destroy
+    # byebug
     restaurant = Restaurant.find(params[:restaurant_id])
     restaurant_note = restaurant.restaurant_notes.find(params[:id])
     if restaurant_note.destroy
