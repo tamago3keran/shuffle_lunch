@@ -1,7 +1,6 @@
 class RestaurantsController < ApplicationController
   def index
-    @restaurants = Restaurant.search(params[:search]).page(params[:page]).per(10)
-    # @restaurants = Restaurant.all.desc(:created_at).page(params[:page]).per(10)
+    @restaurants = Restaurant.search(params[:search]).desc(:created_at).page(params[:page]).per(10)
   end
 
   def show

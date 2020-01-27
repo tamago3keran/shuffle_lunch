@@ -14,8 +14,8 @@ class Restaurant
 
   def self.search(search)
     if search
-      find( { name: /search/ } )
-    else 
+      where( { name: /#{search}/ } )
+    else
       all
     end
   end
