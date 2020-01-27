@@ -42,7 +42,7 @@ describe Restaurant do
         invalid_url.each do |url|
           restaurant.url = url
           expect(restaurant).not_to be_valid
-          expect(restuarant.errors[:url]).to include "is invalid"
+          expect(restaurant.errors[:url]).to include "is invalid"
         end
       end
     end
