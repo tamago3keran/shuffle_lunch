@@ -2,9 +2,7 @@ require "rails_helper"
 
 describe RestaurantNotesController do
   let(:restaurant) { Restaurant.create(name: "test", url: "http://example.com/", description: "") }
-  let(:restaurant_note_params) {
-    { writer_name: "test_name", comment: "example" }
-  }
+  let(:restaurant_note_params) { { writer_name: "test_name", comment: "example" } }
 
   describe "POST /restaurants/:restaurant_id/restaurant_notes" do
     it "redirects to restaurant show page" do
