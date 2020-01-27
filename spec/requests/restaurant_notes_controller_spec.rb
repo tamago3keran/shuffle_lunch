@@ -40,10 +40,10 @@ describe RestaurantNotesController do
       #   expect(restaurant_note.comment).not_to eq(invalid_attributes[:comment])
       # end
 
-      it "render edit template" do
-        put restaurant_restaurant_note_path(restaurant, restaurant_note), params: { restaurant_note: invalid_attributes }
-        expect(response).to render_template :edit
-      end
+      # it "render edit template" do
+      #   put restaurant_restaurant_note_path(restaurant, restaurant_note), params: { restaurant_note: invalid_attributes }
+      #   expect(response).to render_template :edit
+      # end
     end
   end
 end
