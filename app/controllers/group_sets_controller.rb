@@ -11,8 +11,8 @@ class GroupSetsController < ApplicationController
       when :index
         @group_sets = GroupSet.all.desc(:created_at).page(params[:page]).per(10)
       when :show
-        if request.fullpath == "/"
-          @group_set = GroupSet.last
+        if request.fullpath == root_path
+          @group_set = GroupSet.all.desc(:created_at).first
         else
           @group_set = GroupSet.find(params[:id])
         end
