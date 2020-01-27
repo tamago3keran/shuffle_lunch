@@ -11,4 +11,6 @@ class Restaurant
 
   validates :name, presence: true
   validates :url, presence: true
+
+  scope :random, -> { skip(rand(self.count)) }
 end

@@ -2,6 +2,7 @@
 .main
   .item
     %h1 Group#{@group_number}(#{@group_set.created_at.strftime('%m月%d日')})
+  = link_to "シャッフルランチ！", group_set_group_path(@group_set, @group, group_number: @group_number, group: { restaurant: @restaurants.random.first }), method: :put, class: "shuffle_link"
   .group_data
     .group_member
       - @group.members.each do |member|
