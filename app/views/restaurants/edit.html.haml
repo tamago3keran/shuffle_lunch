@@ -1,10 +1,14 @@
 #js-restaurant_edit
 .main
-  %h1  お店情報を更新する
-  .edit_restaurant_form
-  = form_for @restaurant, url: restaurant_path, method: :patch do |f|
-    = render partial: 'form', locals: {f: f}
-    =submit_tag "更新する", class: "btn_to_edit_restaurant"
+  .item
+    %h1 お店情報を更新する
+  .form_item
+    = form_for @restaurant, url: restaurant_path, method: :patch do |f|
+      = render partial: 'form', locals: {f: f}
+      .input
+        %p= f.submit "更新する", class: "submit"
   %br
-  =link_to "一覧に戻る", restaurants_path, class: "btn_back_to_index_page"
+  .link_items
+    .link
+      = link_to "戻る", restaurant_path(@restaurant)
 = javascript_include_tag 'packs/restaurant_edit.bundle'

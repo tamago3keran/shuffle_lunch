@@ -1,10 +1,10 @@
 #js-group_set_show
-.group_main
+.main
   .group_name
     %h1 Group#{@group_number}(#{@group.created_at.strftime('%m月%d日')})
   .edit_message
     %h2 行ったお店を登録する
-  .edit_form
+  .form_item
     = form_for(@group, url: group_set_group_path(@group_set, @group, group_number: @group_number)) do |f|
       = f.collection_select(:restaurant, @restaurants, :id, :name, @group.restaurant ? {selected: @group.restaurant[:id]} : {include_blank: "お店を選択しよう"} )
       .input
@@ -13,8 +13,8 @@
   .add_restaurant_message
     行ったお店がないときは、追加してください。
   .link_items
-    .left_link
+    .link
       = link_to "戻る", group_set_group_path(@group_set, @group, group_number: @group_number)
-    .right_link
+    .link
       = link_to "お店を追加する", new_restaurant_path
   = javascript_include_tag 'packs/group_set_show.bundle'

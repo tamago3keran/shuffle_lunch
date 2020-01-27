@@ -1,5 +1,5 @@
 #js-group_set_show
-.groupset_main
+.main
   .item
     %h1 #{@group_set.created_at.strftime('%Y年%m月%d日')}のグループ
   .index_item
@@ -19,11 +19,11 @@
               - if group.restaurant.description.present?
                 = group.restaurant.description.truncate(70)
               - else
-                お店詳細がありません。
+                お店詳細が入力されていません
         - else
           .grouprestaurant_blank
             行ったお店を登録しよう！
     %br
-    .left_link
+    .link
       = link_to "一覧に戻る", group_sets_path
   = javascript_include_tag 'packs/group_set_show.bundle'
