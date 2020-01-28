@@ -38,4 +38,20 @@ describe Group do
       expect(best_partner).to eq partner1
     end
   end
+
+  describe "association with restaurant" do
+    let(:restaurant) { Restaurant.create(name: "restaurant", url: "http://example.com", description: "delicious") }
+    let(:group_set) { GroupSet.create }
+    let(:group) { Group.new(group_set_id: group_set.id, member_ids: [user.id, partner1.id, partner2.id]) }
+
+    it "belongs to restaurant" do
+      group.restaurant = restaurant
+      expect(group).to be_valid
+    end
+
+    it "belongs to restaurant optionally" do
+      group.restaurant = nil
+      expect(group).to be_valid
+    end
+  end
 end

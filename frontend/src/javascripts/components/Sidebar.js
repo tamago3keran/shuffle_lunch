@@ -50,7 +50,7 @@ class Sidebar extends React.Component {
           href="/login"
           activated={this.props.activeList == 'login'}>
           <ListItemGraphic graphic={<MaterialIcon icon="exit_to_app" />} />
-          <ListItemText primaryText="ログイン" />
+          <ListItemText primaryText="管理者ログイン" />
         </ListItem>
       </List>
     );
