@@ -8,7 +8,7 @@
   .search_restaurants
     = form_tag restaurants_path, method: :get do
       = text_field_tag :keyword
-      = submit_tag '検索', name: :nil
+      = submit_tag '検索', name: nil
   .index_item
     - @restaurants.each do |restaurant|
       = link_to restaurant_path(restaurant), class: "restaurants" do
