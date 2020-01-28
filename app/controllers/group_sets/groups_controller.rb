@@ -5,7 +5,7 @@ class GroupSets::GroupsController < ApplicationController
 
   def edit
     @restaurants = Restaurant.search(params[:keyword]).desc(:created_at)
-    if @restaurants.to_a.count == 0
+    if @restaurants.count == 0
       @restaurants = Restaurant.all.desc(:created_at)
       flash[:error] = "お店が見つかりませんでした"
     end
