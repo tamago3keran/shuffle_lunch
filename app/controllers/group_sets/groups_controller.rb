@@ -3,9 +3,7 @@ class GroupSets::GroupsController < ApplicationController
 
   def show; end
 
-  def edit
-    session[:forward_url] = request.url
-  end
+  def edit; end
 
   def update
     if @group.update_attributes(restaurant: params[:group][:restaurant])
