@@ -5,10 +5,10 @@
   .restaurant_url
     =link_to @restaurant.url, target: "_blank"
   - if @restaurant.description.present?
-    .restaurant_des
+    .show_description
       = @restaurant.description
   - else
-    .restaurant_des_blank
+    .show_description_blank
       %p 詳しいお店詳細を入力しよう！
   .restaurant_note_text
     みんなの口コミ
@@ -24,7 +24,7 @@
   - if @restaurant_notes.empty?
     .restaurant_notes_blank
       %p 口コミを投稿しよう！
-  .item
+  .lower_pagination
     = paginate(@restaurant_notes)
   .restaurant_note_text
     口コミを投稿する
@@ -33,14 +33,11 @@
       = f.text_field :writer_name, placeholder: '名前', value: nil, required: true, class: "form_note_name"
       = f.text_area :comment, placeholder: '口コミ(100文字以内)', value: nil, required: true, class: "form_note_comment"
       .input
-        %p= f.submit "口コミを投稿する", data: {confirm: "口コミは一度登録されると編集・削除ができません！本当にこの口コミを登録しますか？"}, class: "submit"
+        = f.submit "口コミを投稿する", data: {confirm: "口コミは一度登録されると編集・削除ができません！本当にこの口コミを登録しますか？"}, class: "submit_primary"
   %br
   .link_items
-    .link
-      = link_to "一覧に戻る", restaurants_path
+    = link_to "一覧に戻る", restaurants_path, class: "default_link"
     .links
-      .link
-        = link_to "編集する", edit_restaurant_path
-      .link
-        = link_to "削除する", restaurant_path, method: :delete, data: {confirm: "お店を削除すると今まで投稿された口コミも削除されます！本当に削除しますか？"}
+      = link_to "編集する", edit_restaurant_path, class: "success_link"
+      = link_to "削除する", restaurant_path, method: :delete, data: {confirm: "お店を削除すると今まで投稿された口コミも削除されます！本当に削除しますか？"}, class: "danger_link"
   = javascript_include_tag 'packs/restaurant_show.bundle'
