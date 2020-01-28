@@ -33,7 +33,6 @@ describe RestaurantNotesController do
     end
 
     context "with invalid params" do
-
       it "does not update the required restaurant note" do
         put restaurant_restaurant_note_path(restaurant, restaurant_note), params: { restaurant_note: invalid_attributes }
         restaurant_note.reload
