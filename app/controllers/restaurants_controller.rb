@@ -1,6 +1,10 @@
 class RestaurantsController < ApplicationController
   def index
     @restaurants = Restaurant.search(params[:keyword]).desc(:created_at).page(params[:page]).per(10)
+    if @restaurants.count == 0
+      @restaurants = Restaurant.all.desc(:created_at).page(params[:page]).per(10)
+      flash[:error] = "お店が見つかりませんでした"
+    end
   end
 
   def show
