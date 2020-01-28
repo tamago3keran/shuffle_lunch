@@ -67,3 +67,26 @@
   font-size: 20px;
   border: 1px solid black;
 }
+
+.search_item {
+  width: 40%;
+  display: flex;
+}
+
+.search_form {
+  width: 79%;
+  height: 20px;
+  margin: 0 1% 20px 0;
+  border: 1px solid black;
+  border-radius: 3px;
+  font-size: 17px;
+}
+
+.search {
+  width: 19%;
+  height: 25px;
+  margin: 0 0 20px 1%;
+  border: 1px solid black;
+  border-radius: 3px;
+  font-size: 15px;
+}

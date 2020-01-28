@@ -11,4 +11,12 @@ class Restaurant
 
   validates :name, presence: true
   validates :url, presence: true
+
+  def self.search(keyword)
+    if keyword
+      where( name: /#{keyword}/ )
+    else
+      all
+    end
+  end
 end

@@ -4,6 +4,10 @@
     %h1 Group#{@group_number}(#{@group.created_at.strftime('%m月%d日')})
   .edit_message
     %h2 行ったお店を登録する
+  = form_with(url: edit_group_set_group_path(@group_set, @group), method: :get, local: true, class: "search_item") do |f|
+    = f.hidden_field :group_number, value: @group_number
+    = f.text_field :keyword, class: "search_form"
+    = f.submit "検索", class: "search"
   .form_item
     = form_for(@group, url: group_set_group_path(@group_set, @group, group_number: @group_number)) do |f|
       = f.collection_select(:restaurant, @restaurants, :id, :name, @group.restaurant ? {selected: @group.restaurant[:id]} : {include_blank: "お店を選択しよう"} )

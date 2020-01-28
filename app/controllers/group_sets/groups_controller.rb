@@ -4,6 +4,11 @@ class GroupSets::GroupsController < ApplicationController
   def show; end
 
   def edit
+    @restaurants = Restaurant.search(params[:keyword]).desc(:created_at)
+    if @restaurants.to_a.count == 0
+      @restaurants = Restaurant.all.desc(:created_at)
+      flash[:error] = "お店が見つかりませんでした"
+    end
     session[:forward_url] = request.url
   end
 
@@ -27,7 +32,6 @@ class GroupSets::GroupsController < ApplicationController
         @group_set = GroupSet.find(params[:group_set_id])
         @group = @group_set.groups.find(params[:id])
         @group_number = params[:group_number]
-        @restaurants = Restaurant.all
       when :update
         @group_set = GroupSet.find(params[:group_set_id])
         @group = @group_set.groups.find(params[:id])
