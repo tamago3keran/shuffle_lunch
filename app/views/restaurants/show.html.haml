@@ -33,7 +33,7 @@
   .form_item
     = form_for @restaurant.restaurant_notes.build, url: restaurant_restaurant_notes_path(params[:id]) do |f|
       = f.text_field :writer_name, placeholder: '名前', value: nil, required: true, class: "form_note_name"
-      = f.text_area :comment, placeholder: '口コミ', value: nil, required: true, class: "form_note_comment"
+      = f.text_area :comment, placeholder: '口コミ(100文字以内)', value: nil, required: true, class: "form_note_comment"
       .input
         %p= f.submit "口コミを投稿する", data: {confirm: "本当にこの口コミを登録しますか？"}, class: "submit"
   %br
