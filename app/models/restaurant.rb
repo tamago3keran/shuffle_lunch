@@ -15,7 +15,7 @@ class Restaurant
 
   def self.search(keyword)
     if keyword
-      where( name: /#{keyword}/ )
+      where( { name: /#{::Regexp.escape(keyword)}/ } )
     else
       all
     end

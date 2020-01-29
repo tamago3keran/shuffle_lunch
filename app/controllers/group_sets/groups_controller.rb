@@ -5,11 +5,12 @@ class GroupSets::GroupsController < ApplicationController
 
   def edit
     @restaurants = Restaurant.search(params[:keyword]).desc(:created_at)
-    if @restaurants.count == 0
+    if params[:keyword] && @restaurants.size != 0
+      flash.now[:notice] = "#{@restaurants.size}件見つかりました!"
+    elsif @restaurants.size == 0
       @restaurants = Restaurant.all.desc(:created_at)
-      flash[:error] = "お店が見つかりませんでした"
+      flash.now[:error] = "お店が見つかりませんでした"
     end
-    session[:forward_url] = request.url
   end
 
   def update
