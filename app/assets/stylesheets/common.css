@@ -22,6 +22,48 @@
   background-color: #dc3545;
 }
 
+/*ページネーション*/
+.pagination {
+  text-align: center;
+  padding: 0;
+}
+
+.pagination span {
+  margin: 0;
+  display: inline-block;
+  text-align: center;
+}
+
+.pagination span a{
+  display: block;
+  padding: 5px 10px;
+  text-decoration: none;
+  color: #007bff;
+  border-radius: 2px;
+  border: 1px solid #000;
+}
+
+.pagination span a:hover {
+  padding: 10px;
+  border-radius: 2px;
+  border: 1px solid #007bff;
+}
+
+.pagination .current {
+  padding: 10px;
+  color: #000;
+  border-radius: 2px;
+  border: 1px solid #000;
+}
+
+.upper_pagination {
+  margin: 10px 0;
+}
+
+.lower_pagination {
+  margin: 20px 0;
+}
+
 /*共通するスタイリング*/
 .item {
   margin: 0 auto;
@@ -39,14 +81,22 @@
   margin-bottom: 20px;
 }
 
-.link {
+.default_link {
+  color: #6c757d;
   display: inline-block;
   border-radius: 5px;
-  border: 1px solid black;
+  border: 1px solid #6c757d;
   font-size: 20px;
   padding: 5px 10px;
+  text-decoration: none;
 }
 
+.default_link:hover {
+  color: #fff;
+  background-color: #6c757d;
+}
+
+<<<<<<< HEAD
 .link_small {
   display: inline-block;
   border-radius: 5px;
@@ -60,9 +110,64 @@
   color: black;
 }
 
-.link > a {
+.primary_link {
+  color: #007bff;
+  display: inline-block;
+  border-radius: 5px;
+  border: 1px solid #007bff;
+  font-size: 20px;
+  padding: 5px 10px;
   text-decoration: none;
-  color: black;
+}
+
+.primary_link:hover {
+  color: #fff;
+  background-color: #007bff;
+}
+
+.success_link {
+  color: #28a745;
+  display: inline-block;
+  border-radius: 5px;
+  border: 1px solid #28a745;
+  font-size: 20px;
+  padding: 5px 10px;
+  text-decoration: none;
+}
+
+.success_link:hover {
+  color: #fff;
+  background-color: #28a745;
+}
+
+.info_link {
+  color: #17a2b8;
+  display: inline-block;
+  border-radius: 5px;
+  border: 1px solid #17a2b8;
+  font-size: 20px;
+  padding: 5px 10px;
+  text-decoration: none;
+}
+
+.info_link:hover {
+  color: #fff;
+  background-color: #17a2b8;
+}
+
+.danger_link {
+  color: #dc3545;
+  display: inline-block;
+  border-radius: 5px;
+  border: 1px solid ;
+  font-size: 20px;
+  padding: 5px 10px;
+  text-decoration: none;
+}
+
+.danger_link:hover {
+  color: #fff;
+  background-color: #dc3545;
 }
 
 .form_item {
@@ -73,10 +178,18 @@
   text-align: center;
 }
 
-.submit {
+.submit_primary {
+  color: #007bff;
+  text-align: center;
   display: inline-block;
   border-radius: 5px;
-  padding: 5px 10px;
+  border: 1px solid #007bff;
   font-size: 20px;
-  border: 1px solid black;
+  padding: 5px 10px;
+  text-decoration: none;
+}
+
+.submit_primary:hover {
+  color: #fff;
+  background-color: #007bff;
 }
