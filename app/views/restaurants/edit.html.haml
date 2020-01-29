@@ -4,6 +4,7 @@
     %h1 お店情報を更新する
   .form_item
     = form_for @restaurant, url: restaurant_path, method: :patch do |f|
+      = render "layouts/error_message", model: f.object
       = render partial: 'form', locals: {f: f}
       .input
         = f.submit "更新する", class: "submit_primary"

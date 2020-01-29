@@ -30,6 +30,10 @@
     口コミを投稿する
   .form_item
     = form_for @restaurant.restaurant_notes.build, url: restaurant_restaurant_notes_path(params[:id]) do |f|
+      - if flash[:danger].present?
+        .error_message
+          %ul
+            %li= flash[:danger]
       = f.text_field :writer_name, placeholder: '名前', value: nil, required: true, class: "form_note_name"
       = f.text_area :comment, placeholder: '口コミ(100文字以内)', value: nil, required: true, class: "form_note_comment"
       .input
