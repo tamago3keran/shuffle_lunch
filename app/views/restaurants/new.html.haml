@@ -1,0 +1,13 @@
+#js-restaurant_new
+.main
+  .item
+    %h1 お店を追加する
+  .form_item
+    = form_for @restaurant, url: restaurants_path do |f|
+      = render partial: 'form', locals: {f: f}
+      .input
+        = f.submit "追加する", class: "submit_primary"
+  %br
+  .link_items
+    = link_to "一覧に戻る", restaurants_path, class: "default_link"
+= javascript_include_tag 'packs/restaurant_new.bundle'

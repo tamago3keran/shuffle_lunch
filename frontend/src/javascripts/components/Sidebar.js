@@ -16,23 +16,72 @@ class Sidebar extends React.Component {
   render() {
     return (
       <Drawer className="sidebar-container">
-        <List>
-          <ListItem
-            tag="a"
-            href="/users"
-            activated={this.props.activeList == 'users'}>
-            <ListItemGraphic graphic={<MaterialIcon icon="account_box" />} />
-            <ListItemText primaryText="Users" />
-          </ListItem>
-          <ListItem
-            tag="a"
-            href="/group_sets"
-            activated={this.props.activeList == 'groups'}>
-            <ListItemGraphic graphic={<MaterialIcon icon="group" />} />
-            <ListItemText primaryText="Groups" />
-          </ListItem>
-        </List>
+        { this.props.admin ? this._renderAdminSideBarList() : this._renderClientSideBarList() }
       </Drawer>
+    )
+  }
+
+  _renderClientSideBarList() {
+    return (
+      <List>
+        <ListItem
+          tag="a"
+          href="/group_sets"
+          activated={this.props.activeList == 'groups'}>
+          <ListItemGraphic graphic={<MaterialIcon icon="group" />} />
+          <ListItemText primaryText="グループ一覧" />
+        </ListItem>
+        <ListItem
+          tag="a"
+          href="/restaurants"
+          activated={this.props.activeList == 'restaurants'}>
+          <ListItemGraphic graphic={<MaterialIcon icon="storefront" />} />
+          <ListItemText primaryText="お店一覧" />
+        </ListItem>
+        <ListItem
+          tag="a"
+          href="/users"
+          activated={this.props.activeList == 'users'}>
+          <ListItemGraphic graphic={<MaterialIcon icon="accessibility" />} />
+          <ListItemText primaryText="マッチングスコア" />
+        </ListItem>
+        <ListItem
+          tag="a"
+          href="/login"
+          activated={this.props.activeList == 'login'}>
+          <ListItemGraphic graphic={<MaterialIcon icon="exit_to_app" />} />
+          <ListItemText primaryText="管理者ログイン" />
+        </ListItem>
+      </List>
+    );
+  }
+
+  _renderAdminSideBarList() {
+    return (
+      <List>
+        <ListItem
+          tag="a"
+          href="/admin/group_sets"
+          activated={this.props.activeList == 'adminGroups'}>
+          <ListItemGraphic graphic={<MaterialIcon icon="group" />} />
+          <ListItemText primaryText="グループ管理" />
+        </ListItem>
+        <ListItem
+          tag="a"
+          href="/admin/users"
+          activated={this.props.activeList == 'adminUsers'}>
+          <ListItemGraphic graphic={<MaterialIcon icon="person" />} />
+          <ListItemText primaryText="ユーザー管理" />
+        </ListItem>
+        <ListItem
+          tag="a"
+          href="/logout"
+          activated={this.props.activeList == 'logout'}
+          data-method="delete">
+          <ListItemGraphic graphic={<MaterialIcon icon="undo" />} />
+          <ListItemText primaryText="ログアウト" />
+        </ListItem>
+      </List>
     );
   }
 }

@@ -1,0 +1,13 @@
+#js-admin_group_new
+.admin_main
+  %h1 チーム作成
+  = form_tag admin_group_set_groups_path, method: :post do
+    %h2 ユーザ
+    - @users.each do |user|
+      = check_box_tag "user_ids[]", user.id, false
+      = user.full_name
+      %br
+    = submit_tag "送信"
+  %br
+  = link_to "戻る", admin_group_set_path(@group_set)
+  = javascript_include_tag 'packs/admin_group_new.bundle'

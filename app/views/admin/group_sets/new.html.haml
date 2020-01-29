@@ -1,8 +1,8 @@
-#js-group_set_new
-.main
+#js-admin_group_set_new
+.admin_main
   %h1 新しくチームを分ける
-  
-  = form_tag group_sets_path, method: :post do
+
+  = form_tag admin_group_sets_path, method: :post do
     %h2 チーム数
     = number_field_tag "group_num", 1, min: 1
     %h2 参加予定者
@@ -12,5 +12,5 @@
       %br
     = submit_tag "送信"
   %br
-  = link_to "チーム分け一覧に戻る", group_sets_path
-  = javascript_include_tag 'packs/group_set_new.bundle'
+  = link_to "チーム分け一覧に戻る", admin_group_sets_path
+  = javascript_include_tag 'packs/admin_group_set_new.bundle'

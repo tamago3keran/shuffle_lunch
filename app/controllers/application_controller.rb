@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::Base
   before_action :basic_auth, if: :production?
+  include SessionsHelper
 
   private
     def production?
@@ -9,6 +10,14 @@ class ApplicationController < ActionController::Base
     def basic_auth
       authenticate_or_request_with_http_basic do |username, password|
         username == ENV["BASIC_AUTH_USER"] && password == ENV["BASIC_AUTH_PASSWORD"]
+      end
+    end
+
+    def require_admin_login
+      unless logged_in?
+        flash[:error] = "ログインしてください"
+        store_location
+        redirect_to login_url
       end
     end
 end

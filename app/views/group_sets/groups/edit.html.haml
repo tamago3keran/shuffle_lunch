@@ -1,12 +1,18 @@
-#js-group_edit
+#js-group_set_show
 .main
-  %h1 グループ編集
-  = form_tag group_set_group_path(@group_set, @group), method: :patch do
-    - @users.each do |user|
-      = check_box_tag "user_ids[]", user.id, @group.members.include?(user) ? true : false
-      = user.full_name
-      %br
-    = submit_tag "更新"
+  .group_name
+    %h1 Group#{@group_number}(#{@group.created_at.strftime('%m月%d日')})
+  .edit_message
+    %h2 行ったお店を登録する
+  .form_item
+    = form_for(@group, url: group_set_group_path(@group_set, @group, group_number: @group_number)) do |f|
+      = f.collection_select(:restaurant, @restaurants, :id, :name, @group.restaurant ? {selected: @group.restaurant[:id]} : {include_blank: "お店を選択しよう"} )
+      .input
+        = f.submit "登録する", class: "submit_primary"
   %br
-  = link_to "戻る", group_set_path(@group_set)
-  = javascript_include_tag 'packs/group_edit.bundle'
+  .add_restaurant_message
+    行ったお店がないときは、追加してください。
+  .link_items
+    = link_to "戻る", group_set_group_path(@group_set, @group, group_number: @group_number), class: "default_link"
+    = link_to "お店を追加する", new_restaurant_path, class: "info_link"
+  = javascript_include_tag 'packs/group_set_show.bundle'

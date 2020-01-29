@@ -1,0 +1,12 @@
+#js-admin_group_edit
+.admin_main
+  %h1 グループ編集
+  = form_tag admin_group_set_group_path(@group_set, @group), method: :patch do
+    - @users.each do |user|
+      = check_box_tag "user_ids[]", user.id, @group.members.include?(user) ? true : false
+      = user.full_name
+      %br
+    = submit_tag "更新"
+  %br
+  = link_to "戻る", admin_group_set_path(@group_set)
+  = javascript_include_tag 'packs/admin_group_edit.bundle'
