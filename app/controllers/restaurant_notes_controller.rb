@@ -3,7 +3,7 @@ class RestaurantNotesController < ApplicationController
     restaurant = Restaurant.find(params[:restaurant_id])
     @restaurant_note = restaurant.restaurant_notes.build(restaurant_notes_params)
     if @restaurant_note.save
-      flash[:notice] = "口コミを投稿しました"
+      flash[:notice] = "口コミを投稿しました！"
     else
       flash[:error] = "口コミ投稿に失敗しました"
     end
