@@ -108,6 +108,20 @@ a.groups {
   width: 50%;
 }
 
+.group_restaurant_link {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: #000;
+  padding: 0 5px;
+  margin-bottom: 10px;
+}
+
+.group_restaurant_link:hover {
+  border-radius: 5px;
+  background-color: #cce4ff;
+}
+
 .groups_restaurant_description_blank {
   color: #666;
   text-align: center;
