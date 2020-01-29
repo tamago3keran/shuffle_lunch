@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root to: "group_sets#index"
+  root to: "group_sets#show"
   resources :restaurants do
     resources :restaurant_notes, only: [:create]
   end
@@ -29,5 +29,4 @@ Rails.application.routes.draw do
       resources :matching_scores, only: [:index]
     end
   end
-  resources :restaurants
 end
