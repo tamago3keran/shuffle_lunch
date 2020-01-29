@@ -1,7 +1,10 @@
 #js-restaurant_show
 .main
-  .restaurant_name
+  .restaurant_title
     %h1= @restaurant.name
+    - if @restaurant.genre
+      %ul.tag
+        %li= @restaurant.genre
   .restaurant_url
     =link_to @restaurant.url, target: "_blank"
   - if @restaurant.description.present?

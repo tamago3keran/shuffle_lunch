@@ -13,6 +13,7 @@ gem "bootsnap", ">= 1.1.0", require: false
 gem "haml-rails", "~> 2.0"
 gem "kaminari", "~> 1.1"
 gem "kaminari-mongoid", "~> 1.0"
+gem "simple_enum", require: "simple_enum/mongoid"
 
 group :development, :test do
   gem "byebug", platforms: [:mri, :mingw, :x64_mingw]
