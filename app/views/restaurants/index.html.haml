@@ -11,20 +11,26 @@
     = link_to "お店を追加する", new_restaurant_path, class: "info_link"
   .upper_pagination
     = paginate(@restaurants)
+  .show_number_of_displayed_restaurants
+    = "#{@restaurants.count}件"
   .index_item
-    - @restaurants.each do |restaurant|
-      = link_to restaurant_path(restaurant), class: "restaurants" do
-        .restaurant_name_and_time
-          .index_restaurant_name
-            = restaurant.name
-          .index_restaurant_registeredtime
-            = "登録日：#{restaurant.created_at.strftime('%Y年%m月%d日')}"
-        - if restaurant.description.present?
-          .index_description
-            %p= simple_format(restaurant.description.truncate(35))
-        - else
-          .index_description_blank
-            %p お店詳細を入力しよう！
+    - if @restaurants.count == 0
+      .restaurant_description_blank
+        %p 申し訳ありません。探してみましたが、条件に一致するものは見つかりませんでした。違う条件で探してみてください。
+    - else
+      - @restaurants.each do |restaurant|
+        = link_to restaurant_path(restaurant), class: "restaurants" do
+          .restaurant_name_and_time
+            .index_restaurant_name
+              = restaurant.name
+            .index_restaurant_registeredtime
+              = "登録日：#{restaurant.created_at.strftime('%Y年%m月%d日')}"
+          - if restaurant.description.present?
+            .index_description
+              %p= simple_format(restaurant.description.truncate(35))
+          - else
+            .index_description_blank
+              %p お店詳細を入力しよう！
   .lower_pagination
     = paginate(@restaurants)
   = javascript_include_tag 'packs/restaurant_index.bundle'
