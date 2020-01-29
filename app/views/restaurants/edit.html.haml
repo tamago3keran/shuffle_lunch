@@ -6,9 +6,8 @@
     = form_for @restaurant, url: restaurant_path, method: :patch do |f|
       = render partial: 'form', locals: {f: f}
       .input
-        %p= f.submit "更新する", class: "submit"
+        = f.submit "更新する", class: "submit_primary"
   %br
   .link_items
-    .link
-      = link_to "戻る", restaurant_path(@restaurant)
+    = link_to "戻る", restaurant_path(@restaurant), class: "default_link"
 = javascript_include_tag 'packs/restaurant_edit.bundle'

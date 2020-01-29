@@ -2,13 +2,15 @@
 .main
   .item
     %h1 みんなが行ったお店一覧
-  .link.item
-    = link_to "お店を追加する", new_restaurant_path
   %br
   .search_restaurants
     = form_tag restaurants_path, method: :get do
       = text_field_tag :keyword
       = submit_tag '検索', name: nil
+  .item
+    = link_to "お店を追加する", new_restaurant_path, class: "info_link"
+  .upper_pagination
+    = paginate(@restaurants)
   .index_item
     - @restaurants.each do |restaurant|
       = link_to restaurant_path(restaurant), class: "restaurants" do
@@ -18,11 +20,11 @@
           .index_restaurant_registeredtime
             = "登録日：#{restaurant.created_at.strftime('%Y年%m月%d日')}"
         - if restaurant.description.present?
-          .index_restaurant_des
-            = simple_format(restaurant.description.truncate(27))
+          .index_description
+            %p= simple_format(restaurant.description.truncate(35))
         - else
-          .index_restaurant_des
-            %p お店詳細が入力されていません
-  .item
+          .index_description_blank
+            %p お店詳細を入力しよう！
+  .lower_pagination
     = paginate(@restaurants)
   = javascript_include_tag 'packs/restaurant_index.bundle'
