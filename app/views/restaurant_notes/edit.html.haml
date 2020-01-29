@@ -1,0 +1,14 @@
+#js-restaurant_note_edit
+.main
+  .item
+    %h1 口コミ情報を更新する
+  .form_item
+    = form_for @restaurant_note, url: restaurant_restaurant_note_path, method: :patch do |f|
+      = f.text_field :writer_name, placeholder: '名前', required: true, class: "form_note_name"
+      = f.text_area :comment, placeholder: '口コミ(100文字以内)', required: true, class: "form_note_comment"
+      .input
+        %p= f.submit "更新する", class: "submit_primary"
+  %br
+  .link_items
+    .link= link_to "戻る", restaurant_path(@restaurant), class: "default_link"
+= javascript_include_tag 'packs/restaurant_note_edit.bundle'

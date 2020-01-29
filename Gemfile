@@ -20,6 +20,7 @@ group :development, :test do
   gem "rspec-rails", ">= 3.9"
   gem "mongoid-rspec", ">= 4.0.1"
   gem "database_cleaner"
+  gem "rails-controller-testing"
 end
 
 group :development do
