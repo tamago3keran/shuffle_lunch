@@ -8,13 +8,11 @@
     = form_for(@group, url: group_set_group_path(@group_set, @group, group_number: @group_number)) do |f|
       = f.collection_select(:restaurant, @restaurants, :id, :name, @group.restaurant ? {selected: @group.restaurant[:id]} : {include_blank: "お店を選択しよう"} )
       .input
-        %p= f.submit "登録する", class: "submit"
+        = f.submit "登録する", class: "submit_primary"
   %br
   .add_restaurant_message
     行ったお店がないときは、追加してください。
   .link_items
-    .link
-      = link_to "戻る", group_set_group_path(@group_set, @group, group_number: @group_number)
-    .link
-      = link_to "お店を追加する", new_restaurant_path
+    = link_to "戻る", group_set_group_path(@group_set, @group, group_number: @group_number), class: "default_link"
+    = link_to "お店を追加する", new_restaurant_path, class: "info_link"
   = javascript_include_tag 'packs/group_set_show.bundle'

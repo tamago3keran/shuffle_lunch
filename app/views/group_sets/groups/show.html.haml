@@ -10,21 +10,20 @@
       .group_show_restaurant
         .group_restaurant_name
           %h2= @group.restaurant.name
-        .group_restaurant_description
-          - if @group.restaurant.description.present?
+        - if @group.restaurant.description.present?
+          .groups_restaurant_description
             %p= @group.restaurant.description
-          - else
+        - else
+          .groups_restaurant_description_blank
             %p お店詳細ページから詳しい説明を入力しよう！
         .group_restaurant_url
           お店URL :
           = link_to @group.restaurant.url, @group.restaurant.url, target: "_blank"
     - else
-      .group_show_restaurant_blank
+      .groups_restaurant_blank
         行ったお店を登録しよう！
   %br
   .link_items
-    .link
-      = link_to "一覧に戻る", group_set_path(@group_set)
-    .link
-      = link_to "行ったお店を登録する", edit_group_set_group_path(@group_set, @group, group_number: @group_number)
+    = link_to "一覧に戻る", group_set_path(@group_set), class: "default_link"
+    = link_to "行ったお店を登録する", edit_group_set_group_path(@group_set, @group, group_number: @group_number), class: "success_link"
   = javascript_include_tag 'packs/group_set_show.bundle'
