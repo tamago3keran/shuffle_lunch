@@ -35,7 +35,7 @@ class RestaurantsController < ApplicationController
       end
       session[:forward_url] = nil
     else
-      flash.now[:error] = "お店登録に失敗しました！"
+      flash.now[:error] = "お店登録に失敗しました"
       render :new
     end
   end
@@ -47,10 +47,10 @@ class RestaurantsController < ApplicationController
   def update
     @restaurant = Restaurant.find(params[:id])
     if @restaurant.update_attributes(restaurant_params)
-      flash[:notice] = "お店情報を更新しました"
+      flash[:notice] = "お店情報を更新しました！"
       redirect_to @restaurant
     else
-      flash.now[:notice] = "お店の編集に失敗しました"
+      flash.now[:error] = "お店の編集に失敗しました"
       render :edit
     end
   end
