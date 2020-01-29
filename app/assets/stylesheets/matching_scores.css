@@ -1,17 +1,93 @@
 /*マッチングスコア関連のスタイリング*/
-table{
-  border-collapse: collapse;
-  border-spacing: 0;
-  table-layout: fixed;
-  width: 490px;
-  margin-top: 30px;
+.balloon1 {
+  width: 50%;
+  text-align: center;
+  position: relative;
+  display: block;
+  margin: 0 auto 20px;
+  padding: 7px 10px;
+  min-width: 120px;
+  max-width: 100%;
+  color: #555;
+  font-size: 16px;
+  background: #99e6ff;
+  border-radius: 15px;
 }
 
-table th{
+.balloon1:before {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -15px;
+  border: 15px solid transparent;
+  border-top: 15px solid #99e6ff;
+}
+
+.balloon1 p {
+  margin: 0;
+  padding: 0;
+}
+
+.matching_users {
+  color: #000;
+  width: 70%;
+  margin: 0 auto 5px;
   text-align: center;
-  padding: 7px 0;
-  border-right:solid 1px #ddd;
-  border-left:solid 1px #ddd;
-  border-bottom:solid 1px #ddd;
-  width: 155px;
+  text-decoration: none;
+  font-size: 20px;
+  border-radius: 10px;
+  border: 1px solid #007bff;
+}
+
+.matching_users:hover {
+  color: #007bff;
+  text-decoration: none;
+  background-color: #cce4ff;
+  font-size: 25px;
+}
+
+.table {
+  width: 70%;
+  text-align: center;
+  margin: 0 auto 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.table_item {
+  display: flex;
+  border-radius: 10px;
+  border: 1px solid #007bff;
+  margin-bottom: 5px;
+}
+
+.table_item.data:hover {
+  background-color: #cce4ff;
+}
+
+.th_name {
+  width: 50%;
+  font-size: 25px;
+}
+
+.th_score {
+  width: 50%;
+  font-size: 25px;
+}
+
+.table_name {
+  width: 50%;
+  font-size: 20px;
+}
+
+.table_score {
+  font-size: 20px;
+  width: 50%;
+}
+
+.matching_link {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
 }

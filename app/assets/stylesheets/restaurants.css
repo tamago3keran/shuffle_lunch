@@ -2,16 +2,23 @@
 .restaurants {
   box-sizing: border-box;
   border-radius: 3px;
-  border: 1px solid black;
+  border: 1px solid #000;
+  margin: auto;
   padding: 10px;
   display: flex;
   justify-content: space-around;
   text-decoration: none;
   color: black;
+  margin-bottom: 1px;
+}
+
+.restaurants:hover {
+  border: 1px solid #007bff;
+  background-color: #cce4ff;
 }
 
 .restaurant_name_and_time {
-  width: 50%;
+  width: 40%;
   display: flex;
   flex-direction: column;
 }
@@ -26,9 +33,21 @@
   text-align: center;
 }
 
-.index_restaurant_des {
-  width: 50%;
+.index_description {
+  width: 60%;
   text-align: center;
+  border-radius: 5px;
+  border: 1px solid black;
+  padding: 5px;
+}
+
+.index_description_blank {
+  color: #666;
+  width: 60%;
+  text-align: center;
+  border-radius: 5px;
+  background-color: #eee;
+  padding: 5px;
 }
 
 /*お店登録ページ*/
@@ -65,12 +84,13 @@
   margin: 20px 0;
 }
 
-.restaurant_des_blank {
+.show_description_blank {
+  color: #666;
   width: 100%;
   margin: 0 auto;
   text-align: center;
   border-radius: 5px;
-  border: 1px solid black;
+  background-color: #eee;
 }
 
 .restaurant_note_text {
@@ -95,16 +115,24 @@
   border: 1px solid black;
 }
 
+.restaurant_note_head {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
 .note_time {
   text-align: right;
 }
 
 .restaurant_notes_blank {
+  color: #666;
   width: 100%;
   margin: 0 auto;
   text-align: center;
   border-radius: 5px;
-  border: 1px solid black;
+  background-color: #eee;
 }
 
 .form_note_name {
