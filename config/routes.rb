@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   root to: "group_sets#show"
   resources :restaurants do
-    resources :restaurant_notes, only: [:create, :edit, :update]
+    resources :restaurant_notes, only: [:create, :edit, :update, :destroy]
   end
   get "/login", to: "sessions#new"
   post "/login", to: "sessions#create"

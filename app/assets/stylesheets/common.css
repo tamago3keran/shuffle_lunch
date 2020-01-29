@@ -171,6 +171,21 @@
   background-color: #dc3545;
 }
 
+.danger_link_small {
+  color: #dc3545;
+  display: inline-block;
+  border-radius: 5px;
+  border: 1px solid ;
+  font-size: 15px;
+  padding: 0 6px;
+  text-decoration: none;
+}
+
+.danger_link_small:hover {
+  color: #fff;
+  background-color: #dc3545;
+}
+
 .form_item {
   width: 100%;
 }
