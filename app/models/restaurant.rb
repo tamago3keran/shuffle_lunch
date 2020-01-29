@@ -13,6 +13,8 @@ class Restaurant
   VALID_URL_REGEX = /\A#{URI::regexp(%w(http https))}\z/
   validates :url, presence: true, uniqueness: true, format: VALID_URL_REGEX
 
+  scope :random, -> { skip(rand(self.count)) }
+
   def self.search(keyword)
     if keyword
       where( name: /#{keyword}/ )
