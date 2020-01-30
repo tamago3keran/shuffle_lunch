@@ -9,14 +9,15 @@
         %p= "#{member.full_name}"
     - if @group.restaurant.present?
       .group_show_restaurant
-        .group_restaurant_name
-          %h2= @group.restaurant.name
-        - if @group.restaurant.description.present?
-          .groups_restaurant_description
-            %p= @group.restaurant.description
-        - else
-          .groups_restaurant_description_blank
-            %p お店詳細ページから詳しい説明を入力しよう！
+        = link_to restaurant_path(@group.restaurant), class: "group_restaurant_link" do
+          .group_restaurant_name
+            %h2= @group.restaurant.name
+          - if @group.restaurant.description.present?
+            .groups_restaurant_description
+              %p= @group.restaurant.description
+          - else
+            .groups_restaurant_description_blank
+              %p お店詳細ページから詳しい説明を入力しよう！
         .group_restaurant_url
           お店URL :
           = link_to @group.restaurant.url, @group.restaurant.url, target: "_blank"

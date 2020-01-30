@@ -3,7 +3,7 @@
   .restaurant_name
     %h1= @restaurant.name
   .restaurant_url
-    =link_to @restaurant.url, target: "_blank"
+    =link_to @restaurant.url, @restaurant.url, target: "_blank"
   - if @restaurant.description.present?
     .show_description
       = @restaurant.description
