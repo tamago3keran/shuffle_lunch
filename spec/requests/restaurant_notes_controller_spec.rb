@@ -2,6 +2,7 @@ require "rails_helper"
 
 describe RestaurantNotesController do
   let(:restaurant) { Restaurant.create(name: "test", url: "http://example.com/", description: "") }
+  let(:restaurant_note_params) { { writer_name: "test_name", comment: "example" } }
   let!(:restaurant_note) { restaurant.restaurant_notes.create(writer_name: "testtest", comment: "example") }
   let(:valid_attributes) { { writer_name: "test1", comment: "a" * 99 } }
   let(:invalid_attributes) { { writer_name: "test1", comment: "a" * 101 } }
@@ -43,6 +44,19 @@ describe RestaurantNotesController do
         put restaurant_restaurant_note_path(restaurant, restaurant_note), params: { restaurant_note: invalid_attributes }
         expect(response).to render_template :edit
       end
+    end
+  end
+
+  describe "POST /restaurants/:restaurant_id/restaurant_notes" do
+    it "redirects to restaurant show page" do
+      post restaurant_restaurant_notes_path(restaurant), params: { restaurant_id: restaurant.id, restaurant_note: restaurant_note_params }
+      expect(response).to redirect_to restaurant_path(restaurant)
+    end
+
+    it "creates a new Restaurant note" do
+      expect {
+        post restaurant_restaurant_notes_path(restaurant), params: { restaurant_id: restaurant.id, restaurant_note: restaurant_note_params }
+      }.to change { Restaurant.find(restaurant.id).restaurant_notes.count }.by(1)
     end
   end
 
