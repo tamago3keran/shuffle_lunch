@@ -213,6 +213,7 @@
 .search_item {
   width: 40%;
   display: flex;
+  margin: 0 auto;
 }
 
 .search_form {
@@ -225,10 +226,16 @@
 }
 
 .search {
+  color: #007bff;
   width: 19%;
   height: 25px;
   margin: 0 0 20px 1%;
-  border: 1px solid black;
+  border: 1px solid #007bff;
   border-radius: 3px;
   font-size: 15px;
+}
+
+.search:hover {
+  color: #fff;
+  background-color: #007bff;
 }
