@@ -5,14 +5,17 @@
   %br
   .search_restaurants
     = form_tag restaurants_path, method: :get do
-      = text_field_tag :keyword
+      = text_field_tag :keyword, params[:keyword]
       = submit_tag '検索', name: nil
   .item
     = link_to "お店を追加する", new_restaurant_path, class: "info_link"
   .upper_pagination
     = paginate(@restaurants)
   .show_number_of_displayed_restaurants
-    = "#{@restaurants.count}件"
+    .serch_keyword
+      = "#{params[:keyword]}の検索結果"
+    .serch_count
+      = "#{@restaurants.count}件"
   .index_item
     - if @restaurants.count == 0
       .restaurant_description_blank

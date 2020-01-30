@@ -63,9 +63,12 @@
   border-radius: 3px;
   margin-bottom: 10px;
   margin-right: 10px;
+  margin-left: 10px;
   color: #70757a;
-  text-align: right;
+  display: flex;
+  justify-content: space-between;
 }
+
 
 /*お店登録ページ*/
 .form_restaurant_name {
