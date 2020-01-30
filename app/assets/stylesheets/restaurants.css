@@ -50,6 +50,26 @@
   padding: 5px;
 }
 
+.restaurant_description_blank {
+  color: #666;
+  width: 100%;
+  text-align: center;
+  border-radius: 5px;
+  background-color: #eee;
+  padding: 5px;
+}
+
+.show_number_of_displayed_restaurants {
+  border-radius: 3px;
+  margin-bottom: 10px;
+  margin-right: 10px;
+  margin-left: 10px;
+  color: #70757a;
+  display: flex;
+  justify-content: space-between;
+}
+
+
 /*お店登録ページ*/
 .form_restaurant_name {
   width: 50%;
