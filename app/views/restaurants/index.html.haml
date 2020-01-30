@@ -12,7 +12,8 @@
     = f.submit '検索', class: "search"
   .show_number_of_displayed_restaurants
     .serch_keyword
-      = "「#{params[:keyword]}」の検索結果"
+      - if params[:keyword]
+        = "「#{params[:keyword]}」の検索結果"
     .serch_count
       = "#{@restaurants.count}件"
   .index_item
