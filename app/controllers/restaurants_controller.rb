@@ -1,6 +1,6 @@
 class RestaurantsController < ApplicationController
   def index
-    @restaurants = Restaurant.all.desc(:created_at).page(params[:page]).per(10)
+    @restaurants = Restaurant.search(params[:keyword]).desc(:created_at).page(params[:page]).per(10)
   end
 
   def show
@@ -50,7 +50,7 @@ class RestaurantsController < ApplicationController
       flash[:notice] = "お店情報を更新しました！"
       redirect_to @restaurant
     else
-      flash.now[:notice] = "お店の編集に失敗しました"
+      flash.now[:error] = "お店の編集に失敗しました"
       render :edit
     end
   end
