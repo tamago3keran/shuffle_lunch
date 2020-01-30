@@ -3,7 +3,15 @@ class GroupSets::GroupsController < ApplicationController
 
   def show; end
 
-  def edit; end
+  def edit
+    @restaurants = Restaurant.search(params[:keyword]).desc(:created_at)
+    if params[:keyword].present? && @restaurants.present?
+       flash.now[:notice] = "#{@restaurants.size}件見つかりました!"
+    elsif @restaurants.blank?
+      @restaurants = Restaurant.all.desc(:created_at)
+      flash.now[:error] = "お店が見つかりませんでした"
+    end
+  end
 
   def update
     if @group.update_attributes(restaurant: params[:group][:restaurant])
@@ -30,7 +38,6 @@ class GroupSets::GroupsController < ApplicationController
         @group_set = GroupSet.find(params[:group_set_id])
         @group = @group_set.groups.find(params[:id])
         @group_number = params[:group_number]
-        @restaurants = Restaurant.all
       when :update
         @group_set = GroupSet.find(params[:group_set_id])
         @group = @group_set.groups.find(params[:id])

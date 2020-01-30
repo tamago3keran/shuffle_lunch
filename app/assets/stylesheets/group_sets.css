@@ -191,10 +191,6 @@ a.groups {
 	border-radius: 5px;
 }
 
-.edit_group select::-ms-expand {
-	display: none;
-}
-
 .add_restaurant_message {
   margin-bottom: 15px;
   text-align: right;
