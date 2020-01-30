@@ -5,9 +5,9 @@ class GroupSets::GroupsController < ApplicationController
 
   def edit
     @restaurants = Restaurant.search(params[:keyword]).desc(:created_at)
-    if params[:keyword] && @restaurants.size != 0
+    if params[:keyword].present? && @restaurants.present?
        flash.now[:notice] = "#{@restaurants.size}件見つかりました!"
-    elsif @restaurants.size == 0
+    elsif @restaurants.blank?
       @restaurants = Restaurant.all.desc(:created_at)
       flash.now[:error] = "お店が見つかりませんでした"
     end

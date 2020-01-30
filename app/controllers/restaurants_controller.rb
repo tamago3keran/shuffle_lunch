@@ -1,7 +1,7 @@
 class RestaurantsController < ApplicationController
   def index
     @restaurants = Restaurant.search(params[:keyword]).desc(:created_at).page(params[:page]).per(10)
-    if params[:keyword] && @restaurants.size != 0
+    if params[:keyword].present? && @restaurants.present?
       flash.now[:notice] = "#{@restaurants.size}件見つかりました!"
     end
   end
