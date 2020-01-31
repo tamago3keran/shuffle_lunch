@@ -6,6 +6,7 @@ class RestaurantNotesController < ApplicationController
       flash[:notice] = "口コミを投稿しました！"
     else
       flash[:error] = "口コミ投稿に失敗しました"
+      flash[:danger] = "#{@restaurant_note.errors.full_messages.join}"
     end
     redirect_to restaurant_path(params[:restaurant_id])
   end
